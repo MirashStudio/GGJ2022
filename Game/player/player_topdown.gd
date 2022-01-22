@@ -12,20 +12,14 @@ func _physics_process(delta):
 
 
 func get_input():
-	
 	move = Vector2.ZERO
-	
 	if Input.is_action_pressed("ui_right"):
 		move.x += speed
-		
 	if Input.is_action_pressed("ui_left"):
 		move.x -= speed
-		
 	if Input.is_action_pressed("ui_down"):
 		move.y += speed
-		
 	if Input.is_action_pressed("ui_up"):
 		move.y -= speed
-	
 	move = move.normalized() * speed
 	
