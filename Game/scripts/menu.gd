@@ -10,6 +10,7 @@ func _on_bt_play_pressed():
 
 
 func select_name():
+	
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	var num = rng.randi_range(1,4)
