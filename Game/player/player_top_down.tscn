@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player/player_topdown.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://player/aim.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 57.3892
@@ -32,3 +33,11 @@ smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["player"]]
 shape = SubResource( 2 )
+
+[node name="AIm" type="Sprite" parent="."]
+position = Vector2( 0.476036, 0.15509 )
+scale = Vector2( 0.0320966, 0.0316826 )
+texture = ExtResource( 3 )
+
+[node name="pos_bullet" type="Position2D" parent="."]
+position = Vector2( -2, -7.23998e-06 )

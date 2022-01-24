@@ -9,11 +9,11 @@ signal levelUP
 func add_XP(value):
 	
 	playerXP += value
-	if playerXP >= 50 and playerXP <= 200:
+	if playerXP >= 80 and playerXP <= 200:
 		level_player = 1
 	if playerXP >= 600 and playerXP <= 800:
 		level_player = 2
-	if playerXP >= 2500:
+	if playerXP >= 2000:
 		level_player = 3
 	check_level()
 	
