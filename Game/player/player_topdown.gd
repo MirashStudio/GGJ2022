@@ -6,7 +6,7 @@ var dist_X = 0
 var dist_Y = 0
 var speed = 300
 var speed_aim = 10
-var can_shoot = true
+var can_shoot = false
 var delay_shoot = false
 var can_move_mouse = true
 
@@ -25,7 +25,7 @@ func _physics_process(delta):
 	set_pos_aim()
 	move_aimJoystick(delta)
 	move = move_and_slide(move)
-	
+	GameSingleton.player_target = global_position
 	
 func level_UP():
 	
@@ -73,12 +73,15 @@ func get_input():
 	if Input.is_action_pressed("ui_up"):
 		move.y -= speed
 	move = move.normalized() * speed
-
+	
 func move_aimJoystick(delta):
+	
 		if Input.is_action_pressed("ui_move_aim"):
+			
 			if can_move_mouse:
 				reset_pos_aim()
 			can_move_mouse = false
+			
 		if Input.is_action_pressed("aim_left") and dist_X > -50:
 			dist_X -=1
 			$AIm.global_position.x -= speed_aim
