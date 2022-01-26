@@ -1,39 +1,48 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://player/bullet/bullet.gd" type="Script" id=1]
-[ext_resource path="res://player/aim.png" type="Texture" id=2]
+[ext_resource path="res://player/shot/shot_16.png" type="Texture" id=3]
+[ext_resource path="res://player/shot/shot_14.png" type="Texture" id=4]
+[ext_resource path="res://player/shot/shot_17.png" type="Texture" id=5]
+[ext_resource path="res://player/shot/shot_15.png" type="Texture" id=6]
+[ext_resource path="res://player/shot/shot_18.png" type="Texture" id=7]
+[ext_resource path="res://player/shot/shot_12.png" type="Texture" id=8]
+[ext_resource path="res://player/shot/shot_19.png" type="Texture" id=9]
+[ext_resource path="res://player/shot/shot_13.png" type="Texture" id=10]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 17.9484
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 6.23223
+height = 47.6245
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [  ],
 "loop": false,
 "name": "start",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [  ],
 "loop": false,
 "name": "destroy",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "move",
 "speed": 10.0
 } ]
 
-[node name="bullet_cannon_ghost" type="Area2D" groups=["weapom_enemie"]]
+[node name="bullet_cannon_ghost" type="Area2D" groups=["bullet"]]
 script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["weapom_enemie"]]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["bullet"]]
+rotation = 1.56111
+shape = SubResource( 3 )
 
 [node name="anim" type="AnimatedSprite" parent="."]
-position = Vector2( 1.99994, 2.99997 )
+position = Vector2( 0, 9.53674e-07 )
 rotation = 1.5708
-scale = Vector2( 0.0687883, 0.0582492 )
+scale = Vector2( 0.711354, 1.12837 )
 frames = SubResource( 2 )
 animation = "move"
 

@@ -11,6 +11,7 @@ func _ready():
 	
 func update_transform(value):
 	transform = value
+	
 func _physics_process(delta):
 	
 	if destroy == false:

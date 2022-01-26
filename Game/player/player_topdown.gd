@@ -6,7 +6,7 @@ var dist_X = 0
 var dist_Y = 0
 var speed = 300
 var speed_aim = 10
-var can_shoot = false
+var can_shoot = true
 var delay_shoot = false
 var can_move_mouse = true
 
@@ -24,8 +24,13 @@ func _physics_process(delta):
 	call_shoot()
 	set_pos_aim()
 	move_aimJoystick(delta)
+	hand_look_aim()
+	if can_move_mouse == false:
+		get_viewport().warp_mouse($AIm.position)
+		
 	move = move_and_slide(move)
 	GameSingleton.player_target = global_position
+	
 	
 func level_UP():
 	
@@ -45,16 +50,25 @@ func level_UP():
 			print("LEVEL 3")
 
 func liberate_AIM():
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	can_shoot = true
 	$AIm.visible = true
-
+	$Powerball.visible = true
+	#$icon.flip_v = true
+	
+func hand_look_aim():
+	if can_shoot == true:
+		print("auwdasds")
+		$icon.look_at($AIm.global_position)
+	
 func set_scalePlayer():
 	
 	for i in 50:
 		yield(get_tree().create_timer(0.01),"timeout")
 		scale.x += 0.02
 		scale.y += 0.02
+		
 	yield(get_tree().create_timer(1),"timeout")
 	for i in 50:
 		yield(get_tree().create_timer(0.01),"timeout")
@@ -77,11 +91,8 @@ func get_input():
 func move_aimJoystick(delta):
 	
 		if Input.is_action_pressed("ui_move_aim"):
-			
-			if can_move_mouse:
-				reset_pos_aim()
+			reset_pos_aim()
 			can_move_mouse = false
-			
 		if Input.is_action_pressed("aim_left") and dist_X > -50:
 			dist_X -=1
 			$AIm.global_position.x -= speed_aim
@@ -94,14 +105,15 @@ func move_aimJoystick(delta):
 		if Input.is_action_pressed("aim_up") and dist_Y > - 30:
 			dist_Y -= 1
 			$AIm.global_position.y -= speed_aim
-		if can_move_mouse == false:
-			get_viewport().warp_mouse($AIm.position)
+		
 
 func reset_pos_aim():
-	$AIm.global_position = $pos_bullet.global_position
-	get_viewport().warp_mouse($pos_bullet.position)
-	dist_X = 0
-	dist_Y = 0
+	
+	if can_move_mouse:
+		$AIm.global_position = $pos_bullet.global_position
+		get_viewport().warp_mouse($pos_bullet.position)
+		dist_X = 0
+		dist_Y = 0
 
 func check_dist(node1, node2):
 	var a=Vector2(node1 - node2 )

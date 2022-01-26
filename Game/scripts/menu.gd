@@ -14,24 +14,15 @@ func select_name():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	var num = rng.randi_range(1,4)
-	
-	
 	match num:
 		
 		1:
-			
 			$Label.text = " Gabriel Gay"
-			
 		2:
-			
 			$Label.text = " Henrrique Gay"
-			
 		3:
-			
 			$Label.text = " Kayo Gayzão"
 		4:
-			
 			$Label.text = "Rodrigo YAG"
 		5:
-			
 			$Label.text = "Gilmar GOSTOSO"

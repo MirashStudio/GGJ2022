@@ -37,6 +37,7 @@ func drag_player(delta):
 		
 		
 func death():
+	
 	if death == true:
 		death = false
 		
@@ -47,7 +48,9 @@ func chase(delta):
 		var motion = direction * speed * delta
 		position += motion
 	
+	
 func set_scaleINIT():
+	
 	rng.randomize()
 	var scl = 1
 	match GameSingleton.level_player:
@@ -61,6 +64,7 @@ func set_scaleINIT():
 		3:
 			scl = rng.randf_range(1.8,2.5)
 	scale = Vector2(scl,scl)
+	
 	
 func _on_VisibilityNotifier2D_screen_entered():
 	#set_physics_process(true)
@@ -90,7 +94,7 @@ func _on_area_detection_body_entered(body):
 		
 		if death == false and in_attack == false:
 			in_attack = true
-			
+	
 func _on_area_detection_body_exited(body):
 	
 	if body.is_in_group("player") :
@@ -102,3 +106,12 @@ func _on_Timer_timeout():
 	scale_death()
 	yield(get_tree().create_timer(1),"timeout")
 	
+
+
+func _on_area_detection_area_entered(area):
+	
+	if area.is_in_group("bullet"):
+		print("morreu")
+		stop_move = true
+		$Sprite/AnimationPlayer.play("enemie_death")
+		queue_free()

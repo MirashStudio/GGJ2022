@@ -22,8 +22,6 @@ func add_XP(value):
 	check_level()
 	print(playerXP," ",level_player)
 
-
-
 func check_level():
 	if level_player != level_current:
 		level_current = level_player

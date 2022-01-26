@@ -38,7 +38,7 @@ func create_black_hole():
 	
 	rng.randomize()
 	var leftOrRight = rng.randf_range(0,100)
-	var BH = preload("res://enemies/enemie1.tscn").instance()
+	var BH = preload("res://enemies/enemie1/enemie1.tscn").instance()
 	get_parent().add_child(BH)
 	BH.global_position = GameSingleton.player_target 
 	if leftOrRight <= 50:
