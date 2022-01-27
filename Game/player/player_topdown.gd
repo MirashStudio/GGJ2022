@@ -6,7 +6,7 @@ var dist_X = 0
 var dist_Y = 0
 var speed = 300
 var speed_aim = 10
-var can_shoot = true
+var can_shoot = false
 var delay_shoot = false
 var can_move_mouse = true
 
