@@ -11,5 +11,5 @@ dest_files=[ "res://.import/sfx_fire.ogg-5b4cc69fc118a05c03a31b1a7946ef3b.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

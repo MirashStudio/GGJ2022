@@ -65,7 +65,7 @@ shape = SubResource( 1 )
 [node name="Icon" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "motion2"
-frame = 7
+frame = 11
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

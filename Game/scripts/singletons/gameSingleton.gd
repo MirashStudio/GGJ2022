@@ -8,7 +8,7 @@ var can_create_enemy = false
 var life_player = 100
 var player_death = false
 signal levelUP
-
+signal playerDeath
 
 func add_XP(value):
 	
@@ -23,7 +23,7 @@ func add_XP(value):
 	if playerXP > 3000:
 		level_player = 4
 	check_level()
-	print(playerXP," ",level_player)
+
 
 
 func check_level():
@@ -35,12 +35,12 @@ func check_level():
 func sub_life(value):
 	
 	life_player -= value
-	
+	print(life_player)
 	if life_player <= 0:
 		life_player = 0
 		player_death = true
 		AudioSystem.reset_all()
-	
+		emit_signal("playerDeath")
 func reset_parameters():
 	
 	level_player = 0

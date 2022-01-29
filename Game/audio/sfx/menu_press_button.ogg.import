@@ -11,5 +11,5 @@ dest_files=[ "res://.import/menu_press_button.ogg-e3c77eeb7769b0e576a5472d25daac
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -62,20 +62,21 @@ func create_eye_SAURON():
 
 func spaw_enemy():
 	
-	
 	yield(get_tree().create_timer(delay),"timeout")
-	if GameSingleton.level_player <= 1:
-		create_black_hole()
-		spaw_enemy()
-	if GameSingleton.level_player > 1 and GameSingleton.level_player < 4:
-		rng.randomize()
-		delay = 1.6
-		var enemy_select = rng.randi_range(1,2)
-		if enemy_select == 1:
+	if GameSingleton.player_death == false:
+		if GameSingleton.level_player <= 1:
 			create_black_hole()
-		else:
-			create_eye_SAURON()
-		spaw_enemy()
+			spaw_enemy()
+		if GameSingleton.level_player > 1 and GameSingleton.level_player < 4:
+			rng.randomize()
+			delay = 1.6
+			var enemy_select = rng.randi_range(1,2)
+			if enemy_select == 1:
+				create_black_hole()
+			else:
+				create_eye_SAURON()
+			spaw_enemy()
+
 
 
 func _on_left_body_entered(body):

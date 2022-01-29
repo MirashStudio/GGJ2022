@@ -21,7 +21,7 @@ func _physics_process(delta):
 func _on_bullet_cannon_ghost_body_entered(body):
 	
 	if body.is_in_group("player"):
-		
+		GameSingleton.sub_life(10)
 		destroy = false
 		set_physics_process(false)
 		$anim.frame = 0

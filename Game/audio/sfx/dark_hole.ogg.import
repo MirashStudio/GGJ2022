@@ -11,5 +11,5 @@ dest_files=[ "res://.import/dark_hole.ogg-b8db57edf9d6b9703609b67771f6b2e6.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

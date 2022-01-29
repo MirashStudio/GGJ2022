@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Game"
-run/main_scene="res://scenes/menu.tscn"
+run/main_scene="res://scenes/bootsplash.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -24,6 +24,7 @@ AudioSystemGD="*res://scripts/singletons/audio_system.gd"
 
 window/size/width=1280
 window/size/height=720
+window/size/fullscreen=true
 window/stretch/mode="2d"
 
 [input]

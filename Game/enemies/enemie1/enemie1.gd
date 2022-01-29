@@ -12,9 +12,12 @@ var in_attack  = false
 var damage = false
 var node_refer 
 var rng = RandomNumberGenerator.new()
+var player_in_nucleo = false
+
+
 
 func _ready():
-	
+	GameSingleton.connect("playerDeath",self,"scale_death")
 	position_init = global_position
 	set_scaleINIT()
 	
@@ -33,9 +36,11 @@ func drag_player(delta):
 	if !node_refer == null and death == false and in_attack:
 		stop_move = true
 		var direction = (position - target ).normalized()
-		var motion = direction * 100 * delta
+		var motion = direction * 150 * delta
 		get_node(node_refer).global_position += motion
 		
+		if player_in_nucleo == true:
+			GameSingleton.sub_life(5)
 		
 func death_check():
 	
@@ -109,10 +114,23 @@ func _on_Timer_timeout():
 
 
 func _on_area_detection_area_entered(area):
-	print("entrou")
+	
 	if area.is_in_group("bullet"):
 		print("morreu")
 		stop_move = true
+		$effect_death.play()
 		$Sprite/AnimationPlayer.play("enemie_death")
 		yield(get_tree().create_timer(1),"timeout")
 		queue_free()
+
+
+func _on_area_nucleo_body_exited(body):
+	if body.is_in_group("player") :
+		player_in_nucleo = true
+
+
+func _on_area_nucleo_body_entered(body):
+	
+	if body.is_in_group("player") :
+		player_in_nucleo = false
+	

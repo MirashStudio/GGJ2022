@@ -15,7 +15,7 @@ var in_screen = false
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	
+	GameSingleton.connect("playerDeath",self,"scale_death")
 	position_init = global_position
 	set_scaleINIT()
 	
@@ -57,8 +57,9 @@ func create_bullet():
 	var delay = rng.randf_range(2,4)
 	var bullet = preload("res://enemies/enemie2/bulletEnemy.tscn")
 	var bl = bullet.instance()
-	$pos.get_parent().add_child(bl)
+	get_parent().add_child(bl)
 	bl.update_transform($pos.transform)
+	bl.global_position = global_position
 	yield(get_tree().create_timer(delay),"timeout")
 	create_bullet()
 
@@ -69,13 +70,13 @@ func set_scaleINIT():
 	match GameSingleton.level_player:
 		
 		0:
-			scl = rng.randf_range(0.7,1)
+			scl = rng.randf_range(0.4,0.8)
 		1:
-			scl = rng.randf_range(1,1.4)
+			scl = rng.randf_range(0.8,1.2)
 		2:
-			scl = rng.randf_range(1.4,1.8)
+			scl = rng.randf_range(1.2,1.6)
 		3:
-			scl = rng.randf_range(1.8,2.5)
+			scl = rng.randf_range(1.5,2.5)
 	scale = Vector2(scl,scl)
 	
 func _on_VisibilityNotifier2D_screen_entered():
@@ -125,9 +126,11 @@ func _on_Timer_timeout():
 
 
 func _on_area_detection_area_entered(area):
-	print("entrou ", area)
+	
 	if area.is_in_group("bullet"):
 		print("morreu")
 		stop_move = true
-		#$Sprite/AnimationPlayer.play("enemie_death")
+		$Sprite/AnimationPlayer.play("enemie_death")
+		$effect_death.play()
+		yield(get_tree().create_timer(2),"timeout")
 		queue_free()

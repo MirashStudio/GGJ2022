@@ -11,5 +11,5 @@ dest_files=[ "res://.import/sauron_dies.ogg-e09f3778bf4078de3bc3dbfbcd79fafc.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

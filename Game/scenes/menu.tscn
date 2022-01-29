@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/menu/start_normal.png" type="Texture" id=1]
 [ext_resource path="res://scripts/menu.gd" type="Script" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://assets/menu/background.png" type="Texture" id=17]
 [ext_resource path="res://assets/menu/Menu control/keyboard_layout.png" type="Texture" id=18]
 [ext_resource path="res://assets/menu/Menu control/control_layout.png" type="Texture" id=19]
+[ext_resource path="res://audio/sfx/menu_press_button.ogg" type="AudioStream" id=20]
+[ext_resource path="res://audio/sfx/menu_switch_button.ogg" type="AudioStream" id=21]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -122,10 +124,11 @@ volume_db = -20.0
 autoplay = true
 
 [node name="effect_bt_pressed" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 20 )
 volume_db = -20.0
 
 [node name="effect_bt_focused" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
 volume_db = -20.0
 
 [node name="controls" type="Control" parent="."]

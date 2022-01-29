@@ -11,5 +11,5 @@ dest_files=[ "res://.import/laser_shot.ogg-3580ad10c28a1075c8f7140a1530bdf4.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -9,7 +9,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "bootsplash"
-length = 5.5
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Sprite:texture")
 tracks/0/interp = 1
@@ -27,7 +27,7 @@ tracks/1/path = NodePath("CanvasLayer/Sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0, 1, 1.1, 2, 2.1, 3, 3.1, 4, 4.1, 5.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
@@ -64,7 +64,7 @@ anims/bootsplash = SubResource( 1 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 519.789, 317.957 )
+position = Vector2( 679, 386 )
 scale = Vector2( 0.67583, 0.779076 )
 texture = ExtResource( 1 )
 

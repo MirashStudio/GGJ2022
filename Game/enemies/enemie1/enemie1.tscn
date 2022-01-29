@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://enemies/enemie1/enemie1.gd" type="Script" id=1]
 [ext_resource path="res://assets/enemys/gravity_force/idle_12.png" type="Texture" id=2]
@@ -39,6 +39,7 @@
 [ext_resource path="res://assets/enemys/gravity_force/death/death_15.png" type="Texture" id=37]
 [ext_resource path="res://assets/enemys/gravity_force/death/death_1.png" type="Texture" id=38]
 [ext_resource path="res://assets/enemys/gravity_force/death/death_2.png" type="Texture" id=39]
+[ext_resource path="res://audio/sfx/dark_hole.ogg" type="AudioStream" id=40]
 
 [sub_resource type="Animation" id=10]
 length = 0.001
@@ -324,6 +325,9 @@ radius = 37.8234
 [sub_resource type="CircleShape2D" id=8]
 radius = 114.856
 
+[sub_resource type="CircleShape2D" id=11]
+radius = 20.203
+
 [node name="enemie1" type="KinematicBody2D" groups=["enemy"]]
 scale = Vector2( 0.7, 0.7 )
 collision_layer = 0
@@ -359,12 +363,23 @@ scale = Vector2( 17.2857, 16.8571 )
 [node name="effe_attck" type="AudioStreamPlayer2D" parent="."]
 
 [node name="effect_death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 40 )
+volume_db = -10.0
+pitch_scale = 1.8
 
 [node name="effect_damage" type="AudioStreamPlayer2D" parent="."]
+
+[node name="push_player" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2( 1, 1 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="area_nucleo" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_nucleo"]
+shape = SubResource( 11 )
 
 [connection signal="area_entered" from="area_detection" to="." method="_on_area_detection_area_entered"]
 [connection signal="body_entered" from="area_detection" to="." method="_on_area_detection_body_entered"]
@@ -372,3 +387,5 @@ one_shot = true
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="area_nucleo" to="." method="_on_area_nucleo_body_entered"]
+[connection signal="body_exited" from="area_nucleo" to="." method="_on_area_nucleo_body_exited"]

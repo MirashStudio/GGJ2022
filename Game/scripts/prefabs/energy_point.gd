@@ -8,6 +8,7 @@ var in_screen = false
 
 func _ready():
 	
+	GameSingleton.connect("playerDeath",self,"destroy")
 	GameSingleton.connect("levelUP",self,"restart_parameters")
 	select_values()
 	scale_set()
@@ -61,7 +62,7 @@ func restart_parameters():
 		scale_set()
 		select_color()
 
-func destroy():
+func Hide():
 	
 	while scale.x > 0:
 		yield(get_tree().create_timer(0.02),"timeout")
@@ -69,12 +70,22 @@ func destroy():
 		scale.y -= 0.1
 	scale = Vector2(0,0)
 	colect = true
+
+
+func destroy():
+	
+	#while scale.x > 0:
+		#yield(get_tree().create_timer(0.02),"timeout")
+		#scale.x -= 0.1
+		#scale.y -= 0.1
+		
+	queue_free()
 	
 func _on_energy_point_area_entered(area):
 	
 	if area.is_in_group("player"):
 		GameSingleton.add_XP(AmountXP)
-		destroy()
+		Hide()
 
 func _on_VisibilityNotifier2D_screen_exited():
 	
