@@ -45,6 +45,7 @@ func death_player():
 
 
 func level_UP():
+	
 	match GameSingleton.level_player:
 		1:
 			set_scalePlayer()
@@ -88,7 +89,6 @@ func set_scalePlayer():
 		$Camera2D.zoom.x += 0.01
 		$Camera2D.zoom.y += 0.01
 
-
 func get_input():
 	
 	move = Vector2.ZERO
@@ -103,7 +103,6 @@ func get_input():
 	move = move.normalized() * speed
 	anim_move()
 
-
 func anim_move():
 	
 	if move.x > 0.1 or move.x < -0.1 or move.y > 0.1 or move.y < -0.1:
@@ -111,7 +110,6 @@ func anim_move():
 		$icon.play("move")
 	else:
 		$icon.play("idle")
-
 
 func move_aimJoystick(delta):
 		if Input.is_action_pressed("ui_move_aim"):
@@ -129,7 +127,6 @@ func move_aimJoystick(delta):
 		if Input.is_action_pressed("aim_up") and dist_Y > - 30:
 			dist_Y -= 1
 			$AIm.global_position.y -= speed_aim
-		
 
 func reset_pos_aim():
 	
@@ -143,14 +140,12 @@ func check_dist(node1, node2):
 	var a=Vector2(node1 - node2 )
 	return sqrt( (a.x * a.x) + (a.y * a.y) )
 
-
 func set_pos_aim():
 	
 	if can_shoot == true:
 		if can_move_mouse == true:
 			$AIm.global_position = get_global_mouse_position()
 		$pos_bullet.look_at($AIm.global_position)
-
 
 func call_shoot():
 
