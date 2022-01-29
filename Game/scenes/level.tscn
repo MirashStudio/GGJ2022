@@ -1,10 +1,223 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=14 format=2]
 
+[ext_resource path="res://assets/background/espaco.png" type="Texture" id=1]
 [ext_resource path="res://player/player_top_down.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/level.gd" type="Script" id=3]
+[ext_resource path="res://assets/background/cosmos.png" type="Texture" id=4]
+[ext_resource path="res://assets/background/via_lactea.png" type="Texture" id=5]
+[ext_resource path="res://assets/background/planeta_3.png" type="Texture" id=6]
+[ext_resource path="res://assets/background/planeta_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/background/planeta_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/background/galaxia.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 474.75, 14337 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 670, 13724 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 23722.5, 733.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 20981.5, 406.5 )
 
 [node name="level" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="Espaco" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 640.5, 362 )
+scale = Vector2( 0.682812, 0.690741 )
+z_index = -100
+texture = ExtResource( 1 )
+
+[node name="Cosmos" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 634, 369 )
+scale = Vector2( 0.722917, 0.716667 )
+texture = ExtResource( 4 )
+
+[node name="Cometa" type="Sprite" parent="CanvasLayer"]
+self_modulate = Color( 1, 1, 1, 0.678431 )
+position = Vector2( 695, 394 )
+scale = Vector2( 1.69189, 1.26087 )
+texture = ExtResource( 9 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+layer = -1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+z_index = -2
+motion_scale = Vector2( 0.4, 0.2 )
+motion_mirroring = Vector2( 1594.39, 0 )
+
+[node name="ViaLactea" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 721, -24 )
+scale = Vector2( 0.83, 0.558 )
+z_index = -1
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+z_index = -2
+motion_scale = Vector2( 0.4, 0.2 )
+
+[node name="Planeta3" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+self_modulate = Color( 1, 1, 1, 0.329412 )
+position = Vector2( -2456.75, 5045.25 )
+scale = Vector2( 1.82969, 1.95469 )
+texture = ExtResource( 6 )
+
+[node name="Planeta9" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 6260.5, 4457.5 )
+scale = Vector2( 0.528125, 0.553125 )
+texture = ExtResource( 6 )
+
+[node name="Planeta8" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 3425.5, 427.5 )
+scale = Vector2( 0.528125, 0.553125 )
+texture = ExtResource( 6 )
+
+[node name="Planeta1" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+self_modulate = Color( 1, 1, 1, 0.329412 )
+position = Vector2( 130.5, 210.5 )
+scale = Vector2( 0.528125, 0.553125 )
+texture = ExtResource( 7 )
+
+[node name="Planeta2" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 489.5, 2382.5 )
+texture = ExtResource( 8 )
+
+[node name="Planeta10" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 7885.5, 3022.5 )
+texture = ExtResource( 8 )
+
+[node name="Planeta13" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 23499.1, -2532.88 )
+scale = Vector2( 0.528125, 0.553125 )
+texture = ExtResource( 6 )
+
+[node name="Planeta15" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+self_modulate = Color( 1, 1, 1, 0.329412 )
+position = Vector2( 20204.1, -2749.88 )
+scale = Vector2( 0.528125, 0.553125 )
+texture = ExtResource( 7 )
+
+[node name="Planeta17" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 20563.1, -577.875 )
+texture = ExtResource( 8 )
+
+[node name="Planeta18" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 27959.1, 62.125 )
+texture = ExtResource( 8 )
+
+[node name="Planeta21" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 25409.3, 11405.3 )
+scale = Vector2( 2.0418, 1.89805 )
+texture = ExtResource( 6 )
+
+[node name="Planeta22" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+self_modulate = Color( 1, 1, 1, 0.329412 )
+position = Vector2( 21872.1, 10973.1 )
+scale = Vector2( 0.528125, 0.553125 )
+texture = ExtResource( 7 )
+
+[node name="Planeta23" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 22231.1, 13145.1 )
+texture = ExtResource( 8 )
+
+[node name="Planeta25" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 29627.1, 13785.1 )
+texture = ExtResource( 8 )
+
+[node name="Planeta11" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 9220.5, -3313.5 )
+texture = ExtResource( 8 )
+
+[node name="Planeta12" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( -4951.5, -3288.5 )
+texture = ExtResource( 8 )
+
+[node name="Planeta4" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+modulate = Color( 1, 1, 1, 0.278431 )
+self_modulate = Color( 1, 1, 1, 0.329412 )
+position = Vector2( -422.5, 3398.5 )
+texture = ExtResource( 8 )
+
+[node name="Planeta5" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( -427.5, 1344.5 )
+scale = Vector2( 2.125, 2.0125 )
+texture = ExtResource( 7 )
+
+[node name="Planeta6" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( -655, -4335 )
+scale = Vector2( 3.25, 3.24375 )
+texture = ExtResource( 7 )
+
+[node name="Planeta7" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+self_modulate = Color( 1, 1, 1, 0.329412 )
+position = Vector2( 3032.5, -2239.5 )
+scale = Vector2( 3.25, 3.24375 )
+texture = ExtResource( 7 )
+
+[node name="Planeta14" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 8695.5, 13399.5 )
+scale = Vector2( 1.18438, 1.325 )
+texture = ExtResource( 6 )
+
+[node name="Planeta16" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 16546.5, 13696.5 )
+scale = Vector2( 2.54531, 2.4578 )
+texture = ExtResource( 7 )
+
+[node name="Planeta19" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 11148.5, 9331.5 )
+scale = Vector2( 1.69487, 1.52051 )
+texture = ExtResource( 8 )
+
+[node name="Planeta20" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+modulate = Color( 1, 1, 1, 0.447059 )
+position = Vector2( -2865.75, 13625.8 )
+scale = Vector2( 4.24871, 4.94102 )
+texture = ExtResource( 8 )
+
+[node name="Planeta24" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+self_modulate = Color( 1, 1, 1, 0.490196 )
+position = Vector2( 16523.5, 6025 )
+scale = Vector2( 10.6125, 9.525 )
+texture = ExtResource( 7 )
+
 [node name="player_top_down" parent="." instance=ExtResource( 2 )]
-position = Vector2( 639, 362 )
+position = Vector2( 642, 360 )
+z_index = 2
+
+[node name="left" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
+position = Vector2( -2496, 6470 )
+shape = SubResource( 1 )
+
+[node name="right" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
+position = Vector2( 28879, 6633 )
+shape = SubResource( 2 )
+
+[node name="top" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top"]
+position = Vector2( 15436, -6456 )
+shape = SubResource( 3 )
+
+[node name="botton" type="Area2D" parent="."]
+position = Vector2( 5560, 16816 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="botton"]
+position = Vector2( 8713, 3685 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="left" to="." method="_on_left_body_entered"]
+[connection signal="body_entered" from="right" to="." method="_on_right_body_entered"]
+[connection signal="body_entered" from="top" to="." method="_on_top_body_entered"]
+[connection signal="body_entered" from="botton" to="." method="_on_botton_body_entered"]

@@ -37,6 +37,7 @@ func _on_bt_controls_pressed():
 	$effect_bt_pressed.play()
 	$controls.visible = true
 	$bt_back.visible = true
+	$bt_back.grab_focus()
 	pass # Replace with function body.
 
 
@@ -44,6 +45,7 @@ func _on_bt_credts_pressed():
 	$effect_bt_pressed.play()
 	$credits.visible = true
 	$bt_back.visible = true
+	$bt_back.grab_focus()
 	pass # Replace with function body.
 
 
@@ -73,3 +75,4 @@ func _on_bt_back_pressed():
 	$controls.visible = false
 	$credits.visible = false
 	$bt_back.visible = false
+	$bt_play.grab_focus()

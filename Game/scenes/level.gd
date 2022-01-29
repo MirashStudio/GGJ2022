@@ -1,7 +1,7 @@
 extends Node2D
 
 var rng = RandomNumberGenerator.new()
-var posRefer = Vector2(100,100)
+var posRefer = Vector2(10,10)
 var delay = 2
 
 func _ready():
@@ -12,12 +12,12 @@ func _ready():
 
 func spaw_pointsEnergy():
 	
-	for x in 20:
+	for x in 30:
 		rng.randomize()
 		var xAdd = rng.randf_range(500,1000)
 		posRefer.x += xAdd
 		posRefer.y = 100
-		for y in 20:
+		for y in 30:
 			rng.randomize()
 			var yAdd = rng.randf_range(100,1000)
 			posRefer.y += yAdd
@@ -75,3 +75,28 @@ func spaw_enemy():
 		else:
 			create_eye_SAURON()
 		spaw_enemy()
+
+
+func _on_left_body_entered(body):
+	
+	if body.is_in_group("player"):
+		body.global_position.x = 27000
+
+
+func _on_right_body_entered(body):
+	if body.is_in_group("player"):
+		body.global_position.x = -1000
+
+
+func _on_top_body_entered(body):
+	if body.is_in_group("player"):
+		body.global_position.y = 19000 
+
+
+func _on_botton_body_entered(body):
+	if body.is_in_group("player"):
+		body.global_position.y = -5000
+
+
+
+	
