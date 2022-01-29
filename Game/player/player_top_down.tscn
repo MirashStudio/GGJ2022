@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://player/player_topdown.gd" type="Script" id=1]
 [ext_resource path="res://player/idle/idle_0018.png" type="Texture" id=2]
@@ -9,17 +9,12 @@
 [ext_resource path="res://player/idle/idle_0023.png" type="Texture" id=7]
 [ext_resource path="res://player/idle/idle_0024.png" type="Texture" id=8]
 [ext_resource path="res://player/idle/idle_0025.png" type="Texture" id=9]
-[ext_resource path="res://player/idle/idle_0026.png" type="Texture" id=10]
 [ext_resource path="res://player/idle/idle_0006.png" type="Texture" id=11]
 [ext_resource path="res://player/idle/idle_0009.png" type="Texture" id=12]
 [ext_resource path="res://player/idle/idle_0014.png" type="Texture" id=13]
 [ext_resource path="res://player/idle/idle_0011.png" type="Texture" id=14]
-[ext_resource path="res://player/idle/idle_0027.png" type="Texture" id=15]
 [ext_resource path="res://player/idle/idle_0017.png" type="Texture" id=16]
-[ext_resource path="res://player/idle/idle_0028.png" type="Texture" id=17]
 [ext_resource path="res://player/idle/idle_0001.png" type="Texture" id=18]
-[ext_resource path="res://player/idle/idle_0029.png" type="Texture" id=19]
-[ext_resource path="res://player/idle/idle_0030.png" type="Texture" id=20]
 [ext_resource path="res://player/idle/idle_0005.png" type="Texture" id=21]
 [ext_resource path="res://player/idle/idle_0003.png" type="Texture" id=22]
 [ext_resource path="res://player/idle/idle_0012.png" type="Texture" id=23]
@@ -36,8 +31,6 @@
 [ext_resource path="res://player/powerball/powerball_atk0001.png" type="Texture" id=34]
 [ext_resource path="res://player/powerball/powerball_atk0002.png" type="Texture" id=35]
 [ext_resource path="res://player/powerball/powerball_atk0003.png" type="Texture" id=36]
-[ext_resource path="res://player/idle/idle_0032.png" type="Texture" id=37]
-[ext_resource path="res://player/idle/idle_0031.png" type="Texture" id=38]
 [ext_resource path="res://player/powerball/powerball_atk0000.png" type="Texture" id=39]
 [ext_resource path="res://player/powerball/powerball_atk0026.png" type="Texture" id=40]
 [ext_resource path="res://player/powerball/powerball_atk0030.png" type="Texture" id=41]
@@ -85,7 +78,7 @@ radius = 19.0
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 24 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 11 ), ExtResource( 33 ), ExtResource( 27 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 23 ), ExtResource( 28 ), ExtResource( 13 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 16 ), ExtResource( 2 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 38 ), ExtResource( 37 ) ],
+"frames": [ ExtResource( 24 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 11 ), ExtResource( 33 ), ExtResource( 27 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 23 ), ExtResource( 28 ), ExtResource( 13 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 16 ), ExtResource( 2 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "idle",
 "speed": 24.0
@@ -104,10 +97,14 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[node name="player_top_down" type="KinematicBody2D" groups=["player"]]
+[node name="player_top_down" type="KinematicBody2D" groups=[
+"player",
+]]
 script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"player",
+]]
 position = Vector2( 1, 6 )
 scale = Vector2( 0.320797, 0.416568 )
 shape = SubResource( 1 )
@@ -117,9 +114,13 @@ one_way_collision = true
 current = true
 smoothing_speed = 10.0
 
-[node name="Area2D" type="Area2D" parent="." groups=["player"]]
+[node name="Area2D" type="Area2D" parent="." groups=[
+"player",
+]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=[
+"player",
+]]
 position = Vector2( 0, 6 )
 shape = SubResource( 2 )
 
@@ -138,7 +139,7 @@ rotation = -1.5708
 scale = Vector2( 0.380428, 0.334128 )
 frames = SubResource( 3 )
 animation = "idle"
-frame = 24
+frame = 22
 playing = true
 offset = Vector2( -60, 0 )
 
@@ -149,5 +150,5 @@ rotation = -1.56735
 scale = Vector2( 0.283844, 0.270647 )
 frames = SubResource( 4 )
 animation = "motion"
-frame = 35
+frame = 4
 playing = true
