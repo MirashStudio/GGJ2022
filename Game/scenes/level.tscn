@@ -51,13 +51,25 @@ texture = ExtResource( 9 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
 layer = -1
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+[node name="ParallaxVialactea" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 z_index = -2
 motion_scale = Vector2( 0.4, 0.2 )
 motion_mirroring = Vector2( 1594.39, 0 )
 
-[node name="ViaLactea" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
-position = Vector2( 721, -24 )
+[node name="ViaLactea" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxVialactea"]
+position = Vector2( 751, 611 )
+scale = Vector2( 0.83, 0.558 )
+z_index = -1
+texture = ExtResource( 5 )
+
+[node name="ViaLactea2" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxVialactea"]
+position = Vector2( 710, 9962 )
+scale = Vector2( 0.83, 0.558 )
+z_index = -1
+texture = ExtResource( 5 )
+
+[node name="ViaLactea3" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxVialactea"]
+position = Vector2( 710, 17497 )
 scale = Vector2( 0.83, 0.558 )
 z_index = -1
 texture = ExtResource( 5 )
@@ -87,130 +99,135 @@ position = Vector2( 627, 378 )
 scale = Vector2( 0.677083, 0.705556 )
 texture = ExtResource( 11 )
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+[node name="planets" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 z_index = -2
-motion_scale = Vector2( 0.4, 0.2 )
+motion_scale = Vector2( 0.2, 0.2 )
 
-[node name="Planeta3" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta3" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 self_modulate = Color( 1, 1, 1, 0.329412 )
-position = Vector2( -2456.75, 5045.25 )
+position = Vector2( 2657, 6674 )
 scale = Vector2( 1.82969, 1.95469 )
 texture = ExtResource( 6 )
 
-[node name="Planeta9" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 6260.5, 4457.5 )
+[node name="Planeta9" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
+position = Vector2( 21453, 4035 )
 scale = Vector2( 0.528125, 0.553125 )
 texture = ExtResource( 6 )
 
-[node name="Planeta8" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta26" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
+position = Vector2( 24893, 1996.25 )
+scale = Vector2( 1.49375, 1.40469 )
+texture = ExtResource( 6 )
+
+[node name="Planeta8" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( 3425.5, 427.5 )
 scale = Vector2( 0.528125, 0.553125 )
 texture = ExtResource( 6 )
 
-[node name="Planeta1" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta1" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 self_modulate = Color( 1, 1, 1, 0.329412 )
 position = Vector2( 130.5, 210.5 )
 scale = Vector2( 0.528125, 0.553125 )
 texture = ExtResource( 7 )
 
-[node name="Planeta2" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta2" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( 489.5, 2382.5 )
 texture = ExtResource( 8 )
 
-[node name="Planeta10" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta10" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( 7885.5, 3022.5 )
 texture = ExtResource( 8 )
 
-[node name="Planeta13" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta13" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( 23499.1, -2532.88 )
 scale = Vector2( 0.528125, 0.553125 )
 texture = ExtResource( 6 )
 
-[node name="Planeta15" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta15" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 self_modulate = Color( 1, 1, 1, 0.329412 )
 position = Vector2( 20204.1, -2749.88 )
 scale = Vector2( 0.528125, 0.553125 )
 texture = ExtResource( 7 )
 
-[node name="Planeta17" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta17" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( 20563.1, -577.875 )
 texture = ExtResource( 8 )
 
-[node name="Planeta18" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta18" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( 27959.1, 62.125 )
 texture = ExtResource( 8 )
 
-[node name="Planeta21" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta21" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( 25409.3, 11405.3 )
 scale = Vector2( 2.0418, 1.89805 )
 texture = ExtResource( 6 )
 
-[node name="Planeta22" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta22" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 self_modulate = Color( 1, 1, 1, 0.329412 )
 position = Vector2( 21872.1, 10973.1 )
 scale = Vector2( 0.528125, 0.553125 )
 texture = ExtResource( 7 )
 
-[node name="Planeta23" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta23" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( 22231.1, 13145.1 )
 texture = ExtResource( 8 )
 
-[node name="Planeta25" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta25" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( 29627.1, 13785.1 )
 texture = ExtResource( 8 )
 
-[node name="Planeta11" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta11" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( 9220.5, -3313.5 )
 texture = ExtResource( 8 )
 
-[node name="Planeta12" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
-position = Vector2( -4951.5, -3288.5 )
+[node name="Planeta12" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
+position = Vector2( 11182, 2323 )
 texture = ExtResource( 8 )
 
-[node name="Planeta4" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta4" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 modulate = Color( 1, 1, 1, 0.278431 )
 self_modulate = Color( 1, 1, 1, 0.329412 )
 position = Vector2( -422.5, 3398.5 )
 texture = ExtResource( 8 )
 
-[node name="Planeta5" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta5" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( -427.5, 1344.5 )
 scale = Vector2( 2.125, 2.0125 )
 texture = ExtResource( 7 )
 
-[node name="Planeta6" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
-position = Vector2( -655, -4335 )
+[node name="Planeta6" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
+position = Vector2( 13077, -486 )
 scale = Vector2( 3.25, 3.24375 )
 texture = ExtResource( 7 )
 
-[node name="Planeta7" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta7" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 self_modulate = Color( 1, 1, 1, 0.329412 )
 position = Vector2( 3032.5, -2239.5 )
 scale = Vector2( 3.25, 3.24375 )
 texture = ExtResource( 7 )
 
-[node name="Planeta14" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta14" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( 8695.5, 13399.5 )
 scale = Vector2( 1.18438, 1.325 )
 texture = ExtResource( 6 )
 
-[node name="Planeta16" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta16" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( 16546.5, 13696.5 )
 scale = Vector2( 2.54531, 2.4578 )
 texture = ExtResource( 7 )
 
-[node name="Planeta19" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta19" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 position = Vector2( 11148.5, 9331.5 )
 scale = Vector2( 1.69487, 1.52051 )
 texture = ExtResource( 8 )
 
-[node name="Planeta20" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta20" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 modulate = Color( 1, 1, 1, 0.447059 )
-position = Vector2( -2865.75, 13625.8 )
+position = Vector2( 709, 13445 )
 scale = Vector2( 4.24871, 4.94102 )
 texture = ExtResource( 8 )
 
-[node name="Planeta24" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+[node name="Planeta24" type="Sprite" parent="CanvasLayer/ParallaxBackground/planets"]
 self_modulate = Color( 1, 1, 1, 0.490196 )
 position = Vector2( 16523.5, 6025 )
 scale = Vector2( 10.6125, 9.525 )
@@ -235,7 +252,7 @@ shape = SubResource( 2 )
 [node name="top" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top"]
-position = Vector2( 15436, -6456 )
+position = Vector2( 15476, -4521 )
 shape = SubResource( 3 )
 
 [node name="botton" type="Area2D" parent="."]

@@ -34,6 +34,7 @@ func create_pointEnergy(pos):
 	pointEnergy.global_position.x += posX
 	#print(pos)
 
+
 func create_black_hole():
 	
 	rng.randomize()
@@ -46,9 +47,9 @@ func create_black_hole():
 	else:
 		BH.global_position.x -= 1500
 	
-	
+
 func create_eye_SAURON():
-	
+
 	rng.randomize()
 	var leftOrRight = rng.randf_range(0,100)
 	var BH = preload("res://enemies/enemie2/enemie2.tscn").instance()
@@ -58,9 +59,9 @@ func create_eye_SAURON():
 		BH.global_position.x += 1500
 	else:
 		BH.global_position.x -= 1500
-	
-	
+
 func spaw_enemy():
+	
 	
 	yield(get_tree().create_timer(delay),"timeout")
 	if GameSingleton.level_player <= 1:
