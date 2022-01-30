@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://enemies/enemie2/bulletEneny.gd" type="Script" id=1]
 [ext_resource path="res://assets/enemys/sauron_eye/fireball/fireball_0055.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://assets/enemys/sauron_eye/fireball/fireball_0061.png" type="Texture" id=20]
 [ext_resource path="res://assets/enemys/sauron_eye/fireball/fireball_0057.png" type="Texture" id=21]
 [ext_resource path="res://assets/enemys/sauron_eye/fireball/fireball_0059.png" type="Texture" id=22]
+[ext_resource path="res://audio/sfx/sfx_fire.ogg" type="AudioStream" id=23]
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 14.2221
@@ -34,15 +35,15 @@ animations = [ {
 "name": "start",
 "speed": 8.0
 }, {
-"frames": [  ],
-"loop": false,
-"name": "destroy",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "move",
 "speed": 24.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "destroy",
+"speed": 8.0
 } ]
 
 [node name="bullet_cannon_ghost" type="Area2D" groups=["bulletEnemy"]]
@@ -57,10 +58,17 @@ position = Vector2( -50, 2 )
 scale = Vector2( 0.4972, 0.527315 )
 frames = SubResource( 2 )
 animation = "move"
-frame = 16
+frame = 4
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -19, 0 )
+scale = Vector2( 9.8, 2.3 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 23 )
+volume_db = -10.0
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_bullet_cannon_ghost_body_entered"]
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

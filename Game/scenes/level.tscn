@@ -301,7 +301,6 @@ position = Vector2( 8713, 3685 )
 shape = SubResource( 4 )
 
 [node name="anim_scene" type="AnimationPlayer" parent="."]
-autoplay = "motion"
 anims/RESET = SubResource( 5 )
 anims/motion = SubResource( 6 )
 

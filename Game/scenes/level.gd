@@ -7,6 +7,7 @@ var delay = 2
 func _ready():
 	
 	GameSingleton.connect("levelUP",self,"spaw_enemy")
+	AudioSystem.play_track("faixa1")
 	yield(get_tree().create_timer(1),"timeout")
 	spaw_pointsEnergy()
 
@@ -23,7 +24,7 @@ func spaw_pointsEnergy():
 			var yAdd = rng.randf_range(100,1000)
 			posRefer.y += yAdd
 			create_pointEnergy(posRefer)
-			
+	
 	
 func create_pointEnergy(pos):
 	
@@ -77,7 +78,7 @@ func spaw_enemy():
 			else:
 				create_eye_SAURON()
 			spaw_enemy()
-
+		change_scene_to_boss()
 
 
 func _on_left_body_entered(body):
@@ -103,6 +104,7 @@ func _on_botton_body_entered(body):
 
 func change_scene_to_boss():
 	if GameSingleton.level_player >= 4:
+		yield(get_tree().create_timer(1.5),"timeout")
 		GameSingleton.player_in_boss = true
 		$anim_scene.play("motion")
 		yield(get_tree().create_timer(1.2),"timeout")
