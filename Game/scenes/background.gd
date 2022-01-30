@@ -12,7 +12,19 @@ var completed_appear_space = false
 func _ready():
 	
 	GameSingleton.connect("levelUP",self,"level_UP")
-	
+	yield(get_tree().create_timer(2),"timeout")
+	space = get_node("space")
+	cosmos = get_node("Cosmos")
+	stars = get_node("ParallaxBackground/ParallaxStars")
+	planets = get_node("ParallaxBackground/planets")
+	via_lactea = get_node("ParallaxBackground/ParallaxVialactea")
+	print(space)
+	print(via_lactea)
+	print(cosmos)
+	print(planets)
+	print(stars)
+	set_visibiliy_space()
+	set_visibiliy_viaLactea()
 	
 func level_UP():
 	
@@ -46,22 +58,25 @@ func set_visibiliy_viaLactea():
 func set_visibiliy_galaxy():
 	if completed_appear_galaxy == false:
 		completed_appear_galaxy = true
-		galaxy.visible = true
+		"""galaxy.visible = true
 		var mod = 0.0
 		galaxy.modulate = Color(1,1,1,0)
 		while mod < 1:
 			yield(get_tree().create_timer(0.02),"timeout")
 			mod += 0.01 
-			galaxy.modulate = Color(1,1,1,mod)
+			galaxy.modulate = Color(1,1,1,mod)"""
 			
 		galaxy.modulate = Color(1,1,1,1)
+
+
 
 
 func set_visibiliy_space():
 	
 	if completed_appear_space == false:
 		completed_appear_space = true
-		space.visible = true
+		$"../animlevel".play("space")
+		"""space.visible = true
 		var mod = 0.0
 		space.modulate = Color(1,1,1,0)
 		while mod < 1:
@@ -69,4 +84,4 @@ func set_visibiliy_space():
 			mod += 0.01 
 			space.modulate = Color(1,1,1,mod)
 			
-		space.modulate = Color(1,1,1,1)
+		space.modulate = Color(1,1,1,1)"""
