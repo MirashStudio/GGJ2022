@@ -183,10 +183,10 @@ limit_bottom = 800
 smoothing_enabled = true
 
 [node name="icon" parent="player_top_down" index="5"]
-frame = 24
+frame = 21
 
 [node name="Powerball" parent="player_top_down" index="6"]
-frame = 17
+frame = 11
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

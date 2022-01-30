@@ -128,7 +128,8 @@ func _on_Timer_timeout():
 func _on_area_detection_area_entered(area):
 	
 	if area.is_in_group("bullet"):
-		print("morreu")
+		print("morreu546465")
+		set_physics_process(false)
 		stop_move = true
 		$Sprite/AnimationPlayer.play("enemie_death")
 		$effect_death.play()

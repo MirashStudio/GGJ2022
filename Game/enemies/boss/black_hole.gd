@@ -6,12 +6,13 @@ var target = GameSingleton.player_target
 
 func _physics_process(delta):
 	
-	position.y += 0.2
+	position.y += 1
 	if !node_refer == null:
 		target = GameSingleton.player_target
 		var direction = (position - target ).normalized()
 		var motion = direction * 250 * delta
-		get_node(node_refer).global_position += motion
+		if has_node(node_refer):
+			get_node(node_refer).global_position += motion
 		
 		if player_in_nucleo == true:
 			GameSingleton.sub_life(1)

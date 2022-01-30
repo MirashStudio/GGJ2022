@@ -198,8 +198,8 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-length = 1.351
-step = 0.042
+length = 2.91667
+step = 0.0416667
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -207,10 +207,24 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.042, 0.084, 0.126, 0.168, 0.21, 0.252, 0.294, 0.336, 0.378, 0.42, 0.462, 0.504, 0.546, 0.588, 0.63, 0.672, 0.714, 0.756, 0.798, 0.84, 0.882, 0.924, 0.966, 1.008, 1.05, 1.092, 1.134, 1.176, 1.218, 1.26, 1.302, 1.344 ),
+"times": PoolRealArray( 0, 0.042, 0.084, 0.126, 0.168, 0.21, 0.252, 0.294, 0.336, 0.378, 0.42, 0.462, 0.504, 0.546, 0.588, 0.63, 0.672, 0.791667, 0.916667, 1.04167, 1.16667, 1.29167, 1.41667, 1.54167, 1.66667, 1.79167, 1.91667, 2.04167, 2.16667, 2.29167, 2.41667, 2.54167, 2.70833 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 119 ), ExtResource( 121 ), ExtResource( 112 ), ExtResource( 117 ), ExtResource( 114 ), ExtResource( 113 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 118 ), ExtResource( 120 ), ExtResource( 97 ), ExtResource( 99 ), ExtResource( 98 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 90 ), ExtResource( 89 ), ExtResource( 91 ), ExtResource( 111 ), ExtResource( 110 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 105 ), ExtResource( 104 ), ExtResource( 109 ), ExtResource( 108 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.08333 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "create_spaw_black_hole"
+} ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -275,7 +289,7 @@ anims/attack3 = SubResource( 4 )
 anims/idle = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 119 )
+texture = ExtResource( 28 )
 
 [node name="area_damage" type="Area2D" parent="."]
 

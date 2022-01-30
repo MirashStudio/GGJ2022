@@ -5,7 +5,7 @@ var numSelect = 0
 var death = false
 var can_damage = true
 var delay_attack
-var life = 300
+var life = 40
 var maxATC = 2
 var sequence_attack = [1,2,3,4,5,6,7,8,9,10,5,6,7,4,3,8,2,9,10,1,1,10,2,9,3,8,4,7,5,6,10,9,8,7,6,5,7,3,2,1]
 
@@ -39,7 +39,7 @@ func tween_damage():
 	
 func select_rajadas():
 	
-	if life > 30:
+	if life > 50:
 		spaw_RajadaNormal()
 	else:
 		spaw_RajadaSpecial()
@@ -80,6 +80,7 @@ func create_MeteorBig():
 
 		
 func _on_animBoss_animation_finished(anim_name):
+	
 	print(anim_name)
 	if anim_name  == "attack1" or anim_name  == "attack2" or anim_name  == "attack3":
 		
@@ -91,16 +92,12 @@ func _on_animBoss_animation_finished(anim_name):
 			
 
 func create_spaw_black_hole():
-	
+	delay_attack = 8
 	rng.randomize()
 	var leftOrRight = rng.randf_range(0,100)
-	var BH = preload("res://enemies/enemie1/enemie1.tscn").instance()
+	var BH = preload("res://enemies/boss/black_hole.tscn").instance()
 	get_parent().add_child(BH)
-	BH.global_position = GameSingleton.player_target 
-	if leftOrRight <= 50:
-		BH.global_position.x += 1500
-	else:
-		BH.global_position.x -= 1500
+	BH.global_position = $posMeteorBig.global_position
 
 
 func _on_delay_attack_timeout():
