@@ -59,7 +59,7 @@ func liberate_AIM():
 	
 func hand_look_aim():
 	if can_shoot == true:
-		print("auwdasds")
+		
 		$icon.look_at($AIm.global_position)
 	
 func set_scalePlayer():

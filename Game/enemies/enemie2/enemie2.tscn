@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://enemies/enemie1/enemie1.gd" type="Script" id=1]
+[ext_resource path="res://enemies/enemie2/enemie2.gd" type="Script" id=1]
 [ext_resource path="res://assets/enemys/gravity_force/idle_12.png" type="Texture" id=2]
 [ext_resource path="res://assets/enemys/gravity_force/idle_00.png" type="Texture" id=3]
 [ext_resource path="res://assets/enemys/gravity_force/idle_01.png" type="Texture" id=4]
@@ -301,18 +301,19 @@ tracks/4/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=9]
-radius = 37.8234
+radius = 31.461
 
 [sub_resource type="CircleShape2D" id=8]
 radius = 114.856
 
-[node name="enemie1" type="KinematicBody2D" groups=["enemy"]]
+[node name="enemie2" type="KinematicBody2D" groups=["enemy"]]
 scale = Vector2( 0.7, 0.7 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.905882, 0.0313726, 0.0313726, 1 )
 position = Vector2( -0.71429, -3.57143 )
 scale = Vector2( 1.36161, 1.36161 )
 texture = ExtResource( 3 )
@@ -345,8 +346,6 @@ scale = Vector2( 17.2857, 16.8571 )
 [node name="effect_damage" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
 
 [connection signal="area_entered" from="area_detection" to="." method="_on_area_detection_area_entered"]
 [connection signal="body_entered" from="area_detection" to="." method="_on_area_detection_body_entered"]

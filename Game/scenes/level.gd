@@ -2,7 +2,7 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 var posRefer = Vector2(100,100)
-var delay = 1
+var delay = 2
 
 func _ready():
 	GameSingleton.connect("levelUP",self,"spaw_enemy")
@@ -47,11 +47,31 @@ func create_black_hole():
 		BH.global_position.x -= 1500
 	
 	
+func create_eye_SAURON():
+	
+	rng.randomize()
+	var leftOrRight = rng.randf_range(0,100)
+	var BH = preload("res://enemies/enemie2/enemie2.tscn").instance()
+	get_parent().add_child(BH)
+	BH.global_position = GameSingleton.player_target 
+	if leftOrRight <= 50:
+		BH.global_position.x += 1500
+	else:
+		BH.global_position.x -= 1500
+	
+	
 func spaw_enemy():
-		
+	
+	yield(get_tree().create_timer(delay),"timeout")
 	if GameSingleton.level_player <= 1:
-		
 		create_black_hole()
-		delay = 2
-		yield(get_tree().create_timer(delay),"timeout")
+		spaw_enemy()
+	if GameSingleton.level_player > 1 and GameSingleton.level_player < 4:
+		rng.randomize()
+		delay = 1.6
+		var enemy_select = rng.randi_range(1,2)
+		if enemy_select == 1:
+			create_black_hole()
+		else:
+			create_eye_SAURON()
 		spaw_enemy()

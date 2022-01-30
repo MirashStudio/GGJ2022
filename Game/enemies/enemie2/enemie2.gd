@@ -103,15 +103,16 @@ func _on_area_detection_body_exited(body):
 
 func _on_Timer_timeout():
 	
-	death_check()
-	scale_death()
-	
+	#death_check()
+	#scale_death()
+	#yield(get_tree().create_timer(1),"timeout")
+	pass
 
 
 func _on_area_detection_area_entered(area):
-	print("entrou")
+	print("entrou ", area)
 	if area.is_in_group("bullet"):
 		print("morreu")
 		stop_move = true
-		$Sprite/AnimationPlayer.play("enemie_death")
+		#$Sprite/AnimationPlayer.play("enemie_death")
 		queue_free()

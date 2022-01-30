@@ -7,10 +7,10 @@
 script = ExtResource( 2 )
 
 [node name="bt_play" type="TextureButton" parent="."]
-margin_left = 478.0
-margin_top = 286.0
-margin_right = 544.0
-margin_bottom = 350.0
+margin_left = 616.0
+margin_top = 329.0
+margin_right = 682.0
+margin_bottom = 393.0
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 1 )
 __meta__ = {
