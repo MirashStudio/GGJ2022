@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/credits.jpg-677330ad6453f845787cc2e1aaac0b8f.stex"
+path="res://.import/atk_black_hole_01.png-3c122b96468ab0062fbf25dc139e6940.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/credits/credits.jpg"
-dest_files=[ "res://.import/credits.jpg-677330ad6453f845787cc2e1aaac0b8f.stex" ]
+source_file="res://assets/boss/atk_blackhole/atk_black_hole_01.png"
+dest_files=[ "res://.import/atk_black_hole_01.png-3c122b96468ab0062fbf25dc139e6940.stex" ]
 
 [params]
 
