@@ -11,6 +11,7 @@ var death = false
 var in_attack  = false
 var damage = false
 var node_refer 
+var in_screen = false
 var rng = RandomNumberGenerator.new()
 
 func _ready():
@@ -23,6 +24,7 @@ func _physics_process(delta):
 	target = GameSingleton.player_target
 	chase(delta)
 	drag_player(delta)
+	$pos.look_at(target)
 	
 func init(pos):
 	
@@ -36,7 +38,10 @@ func drag_player(delta):
 		var motion = direction * 100 * delta
 		get_node(node_refer).global_position += motion
 		
-		
+func create_ball():
+	
+	pass
+	
 func death_check():
 	
 	if death == true:
@@ -49,6 +54,14 @@ func chase(delta):
 		var motion = direction * speed * delta
 		position += motion
 	
+func create_bullet():
+	var delay = rng.randf_range(2,4)
+	var bullet = preload("res://enemies/enemie2/bulletEnemy.tscn")
+	var bl = bullet.instance()
+	$pos.get_parent().add_child(bl)
+	bl.update_transform($pos.transform)
+	yield(get_tree().create_timer(delay),"timeout")
+	create_bullet()
 	
 func set_scaleINIT():
 	
@@ -67,11 +80,15 @@ func set_scaleINIT():
 	scale = Vector2(scl,scl)
 	
 	
+
 func _on_VisibilityNotifier2D_screen_entered():
 	#set_physics_process(true)
+	
+	in_screen = true
 	$Timer.start()
 	
 func _on_VisibilityNotifier2D_screen_exited():
+	in_screen = false
 	#set_physics_process(false)
 	pass
 	
