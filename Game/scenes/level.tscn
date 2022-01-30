@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://assets/background/espaco.png" type="Texture" id=1]
+[ext_resource path="res://scenes/background.gd" type="Script" id=1]
 [ext_resource path="res://player/player_top_down.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/level.gd" type="Script" id=3]
 [ext_resource path="res://assets/background/cosmos.png" type="Texture" id=4]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/background/planeta_1.png" type="Texture" id=7]
 [ext_resource path="res://assets/background/planeta_2.png" type="Texture" id=8]
 [ext_resource path="res://assets/background/galaxia.png" type="Texture" id=9]
+[ext_resource path="res://assets/background/escuridao.png" type="Texture" id=10]
+[ext_resource path="res://assets/background/estrelas.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 474.75, 14337 )
@@ -27,19 +29,20 @@ script = ExtResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -5
+script = ExtResource( 1 )
 
-[node name="Espaco" type="Sprite" parent="CanvasLayer"]
+[node name="space" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 640.5, 362 )
 scale = Vector2( 0.682812, 0.690741 )
 z_index = -100
-texture = ExtResource( 1 )
+texture = ExtResource( 10 )
 
 [node name="Cosmos" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 634, 369 )
 scale = Vector2( 0.722917, 0.716667 )
 texture = ExtResource( 4 )
 
-[node name="Cometa" type="Sprite" parent="CanvasLayer"]
+[node name="galaxy" type="Sprite" parent="CanvasLayer"]
 self_modulate = Color( 1, 1, 1, 0.678431 )
 position = Vector2( 695, 394 )
 scale = Vector2( 1.69189, 1.26087 )
@@ -58,6 +61,31 @@ position = Vector2( 721, -24 )
 scale = Vector2( 0.83, 0.558 )
 z_index = -1
 texture = ExtResource( 5 )
+
+[node name="ParallaxStars" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+z_index = -2
+motion_scale = Vector2( 0.6, 0.4 )
+motion_mirroring = Vector2( 2680, 1550 )
+
+[node name="Estrelas" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxStars"]
+position = Vector2( -671, -380 )
+scale = Vector2( 0.677083, 0.705556 )
+texture = ExtResource( 11 )
+
+[node name="Estrelas2" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxStars"]
+position = Vector2( 685, -409 )
+scale = Vector2( 0.677083, 0.705556 )
+texture = ExtResource( 11 )
+
+[node name="Estrelas3" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxStars"]
+position = Vector2( -659, 364 )
+scale = Vector2( 0.677083, 0.705556 )
+texture = ExtResource( 11 )
+
+[node name="Estrelas4" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxStars"]
+position = Vector2( 627, 378 )
+scale = Vector2( 0.677083, 0.705556 )
+texture = ExtResource( 11 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 z_index = -2

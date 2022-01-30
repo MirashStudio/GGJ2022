@@ -138,7 +138,7 @@ rotation = -1.5708
 scale = Vector2( 0.380428, 0.334128 )
 frames = SubResource( 3 )
 animation = "idle"
-frame = 32
+frame = 24
 playing = true
 offset = Vector2( -60, 0 )
 
@@ -149,5 +149,5 @@ rotation = -1.56735
 scale = Vector2( 0.283844, 0.270647 )
 frames = SubResource( 4 )
 animation = "motion"
-frame = 10
+frame = 35
 playing = true
