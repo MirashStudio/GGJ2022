@@ -5,6 +5,7 @@ var posRefer = Vector2(10,10)
 var delay = 2
 
 func _ready():
+	
 	GameSingleton.connect("levelUP",self,"spaw_enemy")
 	yield(get_tree().create_timer(1),"timeout")
 	spaw_pointsEnergy()

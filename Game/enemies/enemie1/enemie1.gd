@@ -40,7 +40,7 @@ func drag_player(delta):
 		get_node(node_refer).global_position += motion
 		
 		if player_in_nucleo == true:
-			GameSingleton.sub_life(5)
+			GameSingleton.sub_life(2)
 		
 func death_check():
 	

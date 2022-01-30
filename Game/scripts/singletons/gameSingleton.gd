@@ -7,6 +7,7 @@ var player_target = Vector2()
 var can_create_enemy = false
 var life_player = 100
 var player_death = false
+var player_in_boss = false
 signal levelUP
 signal playerDeath
 

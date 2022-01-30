@@ -53,15 +53,15 @@ func chase(delta):
 		position += motion
 
 func create_bullet():
-	
-	var delay = rng.randf_range(2,4)
-	var bullet = preload("res://enemies/enemie2/bulletEnemy.tscn")
-	var bl = bullet.instance()
-	get_parent().add_child(bl)
-	bl.update_transform($pos.transform)
-	bl.global_position = global_position
-	yield(get_tree().create_timer(delay),"timeout")
-	create_bullet()
+	if stop_move == false:
+		var delay = rng.randf_range(2,4)
+		var bullet = preload("res://enemies/enemie2/bulletEnemy.tscn")
+		var bl = bullet.instance()
+		get_parent().add_child(bl)
+		bl.update_transform($pos.transform)
+		bl.global_position = global_position
+		yield(get_tree().create_timer(delay),"timeout")
+		create_bullet()
 
 func set_scaleINIT():
 	

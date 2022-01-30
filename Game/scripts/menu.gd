@@ -2,14 +2,15 @@ extends Node2D
 
 
 func _ready():
-	
+
 	yield(get_tree().create_timer(0.2),"timeout")
 	$bt_play.grab_focus()
+
 
 func _on_bt_play_pressed():
 	$effect_bt_pressed.play()
 	select_name()
-	yield(get_tree().create_timer(0.5),"timeout")
+	yield(get_tree().create_timer(1),"timeout")
 	AudioSystem.play_all()
 	get_tree().change_scene("res://scenes/level.tscn")
 

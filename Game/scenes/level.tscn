@@ -240,7 +240,7 @@ scale = Vector2( 10.6125, 9.525 )
 texture = ExtResource( 7 )
 
 [node name="player_top_down" parent="." instance=ExtResource( 2 )]
-position = Vector2( 642, 360 )
+position = Vector2( 9944, 8161 )
 z_index = 2
 
 [node name="left" type="Area2D" parent="."]

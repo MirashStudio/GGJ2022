@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	
+	OS.set_window_maximized(true)
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	#Input.set_custom_mouse_cursor(load("res://transparent.png"))
 	pass

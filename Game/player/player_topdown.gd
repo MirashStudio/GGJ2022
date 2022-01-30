@@ -11,13 +11,26 @@ var delay_shoot = false
 var can_move_mouse = true
 var Time_delay_shoot = 1
 
+
+
 func _ready():
 	
+	OS.set_window_maximized(true)
 	Input.set_custom_mouse_cursor(load("res://transparent.png"))
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	GameSingleton.connect("levelUP",self,"level_UP")
 	GameSingleton.connect("playerDeath",self,"death_player")
-
+	
+	if $"..".name == "levelBoss":
+		
+		can_shoot = true
+		Time_delay_shoot = 0.1
+		speed = 500
+		$AIm.visible = true
+		$Powerball.visible = true
+		liberate_hud()
+		
+		
 func _physics_process(delta):
 	
 	get_input()
@@ -25,13 +38,23 @@ func _physics_process(delta):
 	set_pos_aim()
 	move_aimJoystick(delta)
 	hand_look_aim()
+	update_life()
 	if can_move_mouse == false:
 		get_viewport().warp_mouse($AIm.position)
 	move = move_and_slide(move)
 	GameSingleton.player_target = global_position
 
-func create_screen():
-	pass
+
+func create_screen_death():
+	
+	var scr = preload("res://scenes/menu_death.tscn").instance()
+	get_parent().add_child(scr)
+
+
+func update_life():
+	
+	if $CanvasLayer/life_container.visible == true:
+		$CanvasLayer/life_container/bar_life.value = GameSingleton.life_player
 
 
 func death_player():
@@ -41,7 +64,8 @@ func death_player():
 	$effect_death.play()
 	$Powerball.visible = false
 	yield(get_tree().create_timer(3),"timeout")
-	create_screen()
+	create_screen_death()
+	queue_free()
 
 
 func level_UP():
@@ -62,16 +86,23 @@ func level_UP():
 			speed = 700
 			AudioSystem.play_track("faixa4")
 
+
 func liberate_AIM():
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	can_shoot = true
 	$AIm.visible = true
 	$Powerball.visible = true
-	#$icon.flip_v = true
+	liberate_hud()
+
+
+func liberate_hud():
+
+	$CanvasLayer/anim_hud_player.play("motion")
 
 
 func hand_look_aim():
+	
 	if can_shoot == true:
 		
 		$icon.look_at($AIm.global_position)
@@ -82,7 +113,6 @@ func set_scalePlayer():
 		yield(get_tree().create_timer(0.01),"timeout")
 		scale.x += 0.02
 		scale.y += 0.02
-		
 	yield(get_tree().create_timer(1),"timeout")
 	for i in 50:
 		yield(get_tree().create_timer(0.01),"timeout")
@@ -90,7 +120,6 @@ func set_scalePlayer():
 		$Camera2D.zoom.y += 0.01
 
 func get_input():
-	
 	move = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
 		move.x += speed
@@ -103,30 +132,31 @@ func get_input():
 	move = move.normalized() * speed
 	anim_move()
 
+
 func anim_move():
-	
+
 	if move.x > 0.1 or move.x < -0.1 or move.y > 0.1 or move.y < -0.1:
-		
 		$icon.play("move")
 	else:
 		$icon.play("idle")
 
+
 func move_aimJoystick(delta):
-		if Input.is_action_pressed("ui_move_aim"):
-			reset_pos_aim()
-			can_move_mouse = false
-		if Input.is_action_pressed("aim_left") and dist_X > -50:
-			dist_X -=1
-			$AIm.global_position.x -= speed_aim
-		if Input.is_action_pressed("aim_right")and dist_X < 50:
-			dist_X += 1
-			$AIm.global_position.x += speed_aim
-		if Input.is_action_pressed("aim_dow") and dist_Y < 30 :
-			dist_Y += 1
-			$AIm.global_position.y += speed_aim
-		if Input.is_action_pressed("aim_up") and dist_Y > - 30:
-			dist_Y -= 1
-			$AIm.global_position.y -= speed_aim
+	if Input.is_action_pressed("ui_move_aim"):
+		reset_pos_aim()
+		can_move_mouse = false
+	if Input.is_action_pressed("aim_left") and dist_X > -50:
+		dist_X -=1
+		$AIm.global_position.x -= speed_aim
+	if Input.is_action_pressed("aim_right")and dist_X < 50:
+		dist_X += 1
+		$AIm.global_position.x += speed_aim
+	if Input.is_action_pressed("aim_dow") and dist_Y < 30 :
+		dist_Y += 1
+		$AIm.global_position.y += speed_aim
+	if Input.is_action_pressed("aim_up") and dist_Y > - 30:
+		dist_Y -= 1
+		$AIm.global_position.y -= speed_aim
 
 func reset_pos_aim():
 	
@@ -140,6 +170,7 @@ func check_dist(node1, node2):
 	var a=Vector2(node1 - node2 )
 	return sqrt( (a.x * a.x) + (a.y * a.y) )
 
+
 func set_pos_aim():
 	
 	if can_shoot == true:
@@ -147,9 +178,11 @@ func set_pos_aim():
 			$AIm.global_position = get_global_mouse_position()
 		$pos_bullet.look_at($AIm.global_position)
 
+
 func call_shoot():
 
 	if can_shoot == true:
+		
 		if Input.is_action_pressed("ui_shoot"):
 			can_move_mouse = true
 			if delay_shoot == false:
@@ -157,6 +190,7 @@ func call_shoot():
 				create_bullet()
 				yield(get_tree().create_timer(Time_delay_shoot),"timeout")
 				delay_shoot = false
+				
 		if Input.is_action_pressed("ui_shotTrigger"):
 			if delay_shoot == false:
 				delay_shoot = true
@@ -164,9 +198,12 @@ func call_shoot():
 				yield(get_tree().create_timer(Time_delay_shoot),"timeout")
 				delay_shoot = false
 
+
+
 func create_bullet():
 	
-	var bullet = preload("res://player/bullet/bullet.tscn")
-	var bl = bullet.instance()
-	$pos_bullet.get_parent().add_child(bl)
-	bl.update_transform($pos_bullet.transform)
+	if GameSingleton.player_death == false:
+		var bullet = preload("res://player/bullet/bullet.tscn")
+		var bl = bullet.instance()
+		$pos_bullet.get_parent().add_child(bl)
+		bl.update_transform($pos_bullet.transform)
