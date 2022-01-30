@@ -22,11 +22,13 @@ func _on_black_hole_body_entered(body):
 		node_refer = get_path_to(body)
 
 func _on_nucleo_body_entered(body):
-	player_in_nucleo = true
+	if body.is_in_group("player"):
+		player_in_nucleo = true
 
 
 func _on_nucleo_body_exited(body):
-	player_in_nucleo = false
+	if body.is_in_group("player"):
+		player_in_nucleo = false
 
 
 func _on_VisibilityNotifier2D_screen_exited():

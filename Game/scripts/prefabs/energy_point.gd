@@ -68,7 +68,8 @@ func Hide():
 		yield(get_tree().create_timer(0.02),"timeout")
 		scale.x -= 0.1
 		scale.y -= 0.1
-		$colect.pitch_scale -= 0.1
+		if $colect.pitch_scale > 0.50:
+			$colect.pitch_scale -= 0.1
 	scale = Vector2(0,0)
 	colect = true
 
