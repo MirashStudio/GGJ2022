@@ -1,15 +1,29 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/fonts/Varino - Normal.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/menu/credits/credit_bootsplash.jpg" type="Texture" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 32
-outline_size = 4
+size = 20
+outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 extra_spacing_top = 15
 extra_spacing_char = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 54
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 47
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
 font_data = ExtResource( 1 )
 
 [node name="credits" type="Node2D"]
@@ -19,33 +33,51 @@ position = Vector2( -0.00482178, 0.0085144 )
 texture = ExtResource( 2 )
 
 [node name="credits" type="Control" parent="."]
-margin_left = -0.0413113
+margin_left = -1.62871
 margin_top = 0.0604534
-margin_right = 1291.96
+margin_right = 1290.37
 margin_bottom = 733.06
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="credits"]
-margin_left = -617.846
-margin_top = -338.573
-margin_right = 342.154
-margin_bottom = 308.427
+margin_left = -628.143
+margin_top = 131.406
+margin_right = 63.8567
+margin_bottom = 363.406
 custom_fonts/font = SubResource( 1 )
 text = "Gabriel abraão cheida bileski
-
 Gilmar da silva andrade
-
 Henrique da silva souza
-
 Kayo carvalho 
-
 Renato Xavier Ferreira
-
-Rodrigo cardoso mendes dos santos
-"
+Rodrigo cardoso mendes dos santos"
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="credits"]
+margin_left = -544.316
+margin_top = -234.137
+margin_right = 558.684
+margin_bottom = -154.137
+custom_fonts/font = SubResource( 2 )
+text = "you conquered everything"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="credits"]
+margin_left = -350.253
+margin_top = -106.721
+margin_right = 360.747
+margin_bottom = -58.7208
+custom_fonts/font = SubResource( 3 )
+text = "thanks for playing!"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
