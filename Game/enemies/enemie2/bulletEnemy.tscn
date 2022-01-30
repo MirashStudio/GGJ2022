@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://enemies/enemie2/bulletEneny.gd" type="Script" id=1]
 [ext_resource path="res://assets/enemys/sauron_eye/fireball/fireball_0055.png" type="Texture" id=2]
@@ -23,8 +23,28 @@
 [ext_resource path="res://assets/enemys/sauron_eye/fireball/fireball_0057.png" type="Texture" id=21]
 [ext_resource path="res://assets/enemys/sauron_eye/fireball/fireball_0059.png" type="Texture" id=22]
 [ext_resource path="res://audio/sfx/sfx_fire.ogg" type="AudioStream" id=23]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_02.png" type="Texture" id=24]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_05.png" type="Texture" id=25]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_07.png" type="Texture" id=26]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_08.png" type="Texture" id=27]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_09.png" type="Texture" id=28]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_12.png" type="Texture" id=29]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_13.png" type="Texture" id=30]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_03.png" type="Texture" id=31]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_16.png" type="Texture" id=32]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_10.png" type="Texture" id=33]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_06.png" type="Texture" id=34]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_14.png" type="Texture" id=35]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_15.png" type="Texture" id=36]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_17.png" type="Texture" id=37]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_11.png" type="Texture" id=38]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_18.png" type="Texture" id=39]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_19.png" type="Texture" id=40]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_01.png" type="Texture" id=41]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_04.png" type="Texture" id=42]
+[ext_resource path="res://assets/enemys/sauron_eye/fireball_death/fireball_death_00.png" type="Texture" id=43]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 14.2221
 height = 47.6245
 
@@ -40,25 +60,29 @@ animations = [ {
 "name": "move",
 "speed": 24.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 43 ), ExtResource( 41 ), ExtResource( 24 ), ExtResource( 31 ), ExtResource( 42 ), ExtResource( 25 ), ExtResource( 34 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 38 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 32 ), ExtResource( 37 ), ExtResource( 39 ), ExtResource( 40 ) ],
 "loop": false,
 "name": "destroy",
-"speed": 8.0
+"speed": 24.0
 } ]
 
-[node name="bullet_cannon_ghost" type="Area2D" groups=["bulletEnemy"]]
+[node name="bullet_cannon_ghost" type="Area2D" groups=[
+"bulletEnemy",
+]]
 script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["bulletEnemy"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"bulletEnemy",
+]]
 rotation = 1.56111
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="anim" type="AnimatedSprite" parent="."]
 position = Vector2( -50, 2 )
 scale = Vector2( 0.4972, 0.527315 )
 frames = SubResource( 2 )
 animation = "move"
-frame = 4
+frame = 6
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

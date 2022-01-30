@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://player/bullet/bullet.gd" type="Script" id=1]
 [ext_resource path="res://audio/sfx/laser_shot.ogg" type="AudioStream" id=2]
@@ -10,8 +10,26 @@
 [ext_resource path="res://player/shot/shot_12.png" type="Texture" id=8]
 [ext_resource path="res://player/shot/shot_19.png" type="Texture" id=9]
 [ext_resource path="res://player/shot/shot_13.png" type="Texture" id=10]
+[ext_resource path="res://player/shot_explosion/shot_explosion_12.png" type="Texture" id=11]
+[ext_resource path="res://player/shot_explosion/shot_explosion_10.png" type="Texture" id=12]
+[ext_resource path="res://player/shot_explosion/shot_explosion_11.png" type="Texture" id=13]
+[ext_resource path="res://player/shot_explosion/shot_explosion_02.png" type="Texture" id=14]
+[ext_resource path="res://player/shot_explosion/shot_explosion_03.png" type="Texture" id=15]
+[ext_resource path="res://player/shot_explosion/shot_explosion_00.png" type="Texture" id=16]
+[ext_resource path="res://player/shot_explosion/shot_explosion_01.png" type="Texture" id=17]
+[ext_resource path="res://player/shot_explosion/shot_explosion_05.png" type="Texture" id=18]
+[ext_resource path="res://player/shot_explosion/shot_explosion_04.png" type="Texture" id=19]
+[ext_resource path="res://player/shot_explosion/shot_explosion_06.png" type="Texture" id=20]
+[ext_resource path="res://player/shot_explosion/shot_explosion_07.png" type="Texture" id=21]
+[ext_resource path="res://player/shot_explosion/shot_explosion_08.png" type="Texture" id=22]
+[ext_resource path="res://player/shot_explosion/shot_explosion_09.png" type="Texture" id=23]
+[ext_resource path="res://player/shot_explosion/shot_explosion_17.png" type="Texture" id=24]
+[ext_resource path="res://player/shot_explosion/shot_explosion_14.png" type="Texture" id=25]
+[ext_resource path="res://player/shot_explosion/shot_explosion_15.png" type="Texture" id=26]
+[ext_resource path="res://player/shot_explosion/shot_explosion_13.png" type="Texture" id=27]
+[ext_resource path="res://player/shot_explosion/shot_explosion_16.png" type="Texture" id=28]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 16.3189
 height = 69.2412
 
@@ -22,24 +40,28 @@ animations = [ {
 "name": "start",
 "speed": 8.0
 }, {
-"frames": [  ],
-"loop": false,
-"name": "destroy",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "move",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 24 ) ],
+"loop": false,
+"name": "destroy",
+"speed": 24.0
 } ]
 
-[node name="bullet_cannon_ghost" type="Area2D" groups=["bullet"]]
+[node name="bullet_cannon_ghost" type="Area2D" groups=[
+"bullet",
+]]
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["bullet"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"bullet",
+]]
 rotation = 1.56111
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="anim" type="AnimatedSprite" parent="."]
 position = Vector2( -0.066031, 1.48651 )
