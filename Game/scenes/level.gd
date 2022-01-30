@@ -27,13 +27,13 @@ func spaw_pointsEnergy():
 	
 	
 func create_pointEnergy(pos):
-	
-	rng.randomize()
-	var pointEnergy = preload("res://scenes/prefabs/energy_point.tscn").instance()
-	get_parent().add_child(pointEnergy)
-	pointEnergy.global_position = pos
-	var posX = rng.randf_range(100,800)
-	pointEnergy.global_position.x += posX
+	if GameSingleton.level_player < 4:
+		rng.randomize()
+		var pointEnergy = preload("res://scenes/prefabs/energy_point.tscn").instance()
+		get_parent().add_child(pointEnergy)
+		pointEnergy.global_position = pos
+		var posX = rng.randf_range(100,800)
+		pointEnergy.global_position.x += posX
 	#print(pos)
 
 
@@ -65,11 +65,11 @@ func create_eye_SAURON():
 func spaw_enemy():
 	
 	yield(get_tree().create_timer(delay),"timeout")
-	if GameSingleton.player_death == false:
+	if GameSingleton.player_death == false and GameSingleton.level_player < 4:
 		if GameSingleton.level_player <= 1:
 			create_black_hole()
 			spaw_enemy()
-		if GameSingleton.level_player > 1 and GameSingleton.level_player < 4:
+		if GameSingleton.level_player > 1 :
 			rng.randomize()
 			delay = 1.6
 			var enemy_select = rng.randi_range(1,2)
@@ -78,7 +78,7 @@ func spaw_enemy():
 			else:
 				create_eye_SAURON()
 			spaw_enemy()
-		change_scene_to_boss()
+	change_scene_to_boss()
 
 
 func _on_left_body_entered(body):
@@ -103,9 +103,9 @@ func _on_botton_body_entered(body):
 
 
 func change_scene_to_boss():
-	if GameSingleton.level_player >= 4:
+	if GameSingleton.level_player >= 4 and GameSingleton.player_death == false:
 		yield(get_tree().create_timer(1.5),"timeout")
 		GameSingleton.player_in_boss = true
 		$anim_scene.play("motion")
-		yield(get_tree().create_timer(1.2),"timeout")
+		yield(get_tree().create_timer(1.5),"timeout")
 		get_tree().change_scene("res://scenes/levelBoss.tscn")

@@ -140,5 +140,11 @@ func _on_area_headBoss_area_entered(area):
 			death = true
 			spaw_bossDeath()
 			$delay_attack.stop()
-func _on_area_damage_area_entered(area):
-	pass # Replace with function body.
+
+
+
+
+func _on_area_damage_body_entered(body):
+	
+	if body.is_in_group("player"):
+		GameSingleton.sub_life(100)

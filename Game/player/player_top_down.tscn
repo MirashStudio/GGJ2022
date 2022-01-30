@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=2]
+[gd_scene load_steps=189 format=2]
 
 [ext_resource path="res://player/player_topdown.gd" type="Script" id=1]
 [ext_resource path="res://player/idle/idle_0018.png" type="Texture" id=2]
@@ -141,6 +141,47 @@
 [ext_resource path="res://player/death/hand_death_17.png" type="Texture" id=139]
 [ext_resource path="res://player/life_bar_player_fill.png" type="Texture" id=140]
 [ext_resource path="res://player/life_bar_player.png" type="Texture" id=141]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_29.png" type="Texture" id=142]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_03.png" type="Texture" id=143]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_13.png" type="Texture" id=144]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_30.png" type="Texture" id=145]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_20.png" type="Texture" id=146]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_31.png" type="Texture" id=147]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_05.png" type="Texture" id=148]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_07.png" type="Texture" id=149]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_14.png" type="Texture" id=150]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_18.png" type="Texture" id=151]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_22.png" type="Texture" id=152]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_01.png" type="Texture" id=153]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_26.png" type="Texture" id=154]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_32.png" type="Texture" id=155]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_11.png" type="Texture" id=156]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_12.png" type="Texture" id=157]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_17.png" type="Texture" id=158]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_19.png" type="Texture" id=159]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_00.png" type="Texture" id=160]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_02.png" type="Texture" id=161]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_04.png" type="Texture" id=162]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_06.png" type="Texture" id=163]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_08.png" type="Texture" id=164]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_09.png" type="Texture" id=165]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_15.png" type="Texture" id=166]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_16.png" type="Texture" id=167]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_10.png" type="Texture" id=168]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_21.png" type="Texture" id=169]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_23.png" type="Texture" id=170]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_25.png" type="Texture" id=171]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_24.png" type="Texture" id=172]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_27.png" type="Texture" id=173]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_28.png" type="Texture" id=174]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_39.png" type="Texture" id=175]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_40.png" type="Texture" id=176]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_33.png" type="Texture" id=177]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_34.png" type="Texture" id=178]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_36.png" type="Texture" id=179]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_38.png" type="Texture" id=180]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_35.png" type="Texture" id=181]
+[ext_resource path="res://player/powerball_2/powerball_upgrade_37.png" type="Texture" id=182]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 12.6979
@@ -171,6 +212,14 @@ animations = [ {
 "frames": [ ExtResource( 39 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 58 ), ExtResource( 60 ), ExtResource( 59 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 65 ), ExtResource( 61 ), ExtResource( 56 ), ExtResource( 53 ), ExtResource( 62 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 64 ), ExtResource( 57 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 103 ), ExtResource( 49 ), ExtResource( 52 ), ExtResource( 50 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 40 ), ExtResource( 44 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 41 ), ExtResource( 51 ), ExtResource( 70 ), ExtResource( 67 ), ExtResource( 75 ), ExtResource( 69 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 71 ), ExtResource( 74 ), ExtResource( 68 ) ],
 "loop": true,
 "name": "motion",
+"speed": 24.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 160 ), ExtResource( 153 ), ExtResource( 161 ), ExtResource( 143 ), ExtResource( 162 ), ExtResource( 148 ), ExtResource( 163 ), ExtResource( 149 ), ExtResource( 164 ), ExtResource( 165 ), ExtResource( 168 ), ExtResource( 156 ), ExtResource( 157 ), ExtResource( 144 ), ExtResource( 150 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 158 ), ExtResource( 151 ), ExtResource( 159 ), ExtResource( 146 ), ExtResource( 169 ), ExtResource( 152 ), ExtResource( 170 ), ExtResource( 172 ), ExtResource( 171 ), ExtResource( 154 ), ExtResource( 173 ), ExtResource( 174 ), ExtResource( 142 ), ExtResource( 145 ), ExtResource( 147 ), ExtResource( 155 ), ExtResource( 177 ), ExtResource( 178 ), ExtResource( 181 ), ExtResource( 179 ), ExtResource( 182 ), ExtResource( 180 ), ExtResource( 175 ), ExtResource( 176 ) ],
+"loop": true,
+"name": "default",
 "speed": 24.0
 } ]
 
@@ -236,7 +285,7 @@ rotation = -1.5708
 scale = Vector2( 0.380428, 0.334128 )
 frames = SubResource( 3 )
 animation = "idle"
-frame = 12
+frame = 15
 playing = true
 offset = Vector2( -60, 0 )
 
@@ -247,7 +296,16 @@ rotation = -1.56735
 scale = Vector2( 0.283844, 0.270647 )
 frames = SubResource( 4 )
 animation = "motion"
-frame = 36
+frame = 12
+playing = true
+
+[node name="Powerball2" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 1, 3.00001 )
+rotation = -1.56735
+scale = Vector2( 0.709572, 0.748264 )
+frames = SubResource( 7 )
+frame = 18
 playing = true
 
 [node name="effect_death" type="AudioStreamPlayer" parent="."]

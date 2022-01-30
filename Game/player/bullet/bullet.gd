@@ -1,7 +1,7 @@
 extends Area2D
 
 
-var speed = 650
+var speed = 800
 var destroy = false
 
 func _ready():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://enemies/boss/Metor_small.gd" type="Script" id=1]
 [ext_resource path="res://assets/boss/atk_meteor/atk_meteor_02.png" type="Texture" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://assets/boss/atk_meteor/atk_meteor_14.png" type="Texture" id=24]
 [ext_resource path="res://assets/boss/atk_meteor/atk_meteor_24.png" type="Texture" id=25]
 [ext_resource path="res://assets/boss/atk_meteor/atk_meteor_11.png" type="Texture" id=26]
+[ext_resource path="res://audio/sfx/meteor_boss.ogg" type="AudioStream" id=27]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 25.02
@@ -50,12 +51,17 @@ position = Vector2( 1.75005, -50.9964 )
 rotation = 1.57558
 scale = Vector2( 0.401044, 0.281707 )
 frames = SubResource( 2 )
-frame = 12
+frame = 20
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( -2, 2.5 )
 scale = Vector2( 7.2, 7.35 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 27 )
+volume_db = -5.0
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_Metor_small_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

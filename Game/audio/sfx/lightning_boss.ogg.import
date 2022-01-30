@@ -11,5 +11,5 @@ dest_files=[ "res://.import/lightning_boss.ogg-233e3108edfa06ddf9fe2c8abbb4f839.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

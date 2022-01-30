@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://enemies/boss/black_hole.gd" type="Script" id=1]
 [ext_resource path="res://assets/boss/atk_blackhole/atk_black_hole_04.png" type="Texture" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://assets/boss/atk_blackhole/atk_black_hole_17.png" type="Texture" id=28]
 [ext_resource path="res://assets/boss/atk_blackhole/atk_black_hole_20.png" type="Texture" id=29]
 [ext_resource path="res://assets/boss/atk_blackhole/atk_black_hole_22.png" type="Texture" id=30]
+[ext_resource path="res://audio/sfx/black_role.ogg" type="AudioStream" id=31]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 785.064
@@ -86,7 +87,7 @@ shape = SubResource( 1 )
 position = Vector2( 2, 3 )
 scale = Vector2( 2.75, 3.01806 )
 frames = SubResource( 3 )
-frame = 24
+frame = 11
 playing = true
 
 [node name="nucleo" type="Area2D" parent="."]
@@ -105,6 +106,8 @@ anims/RESET = SubResource( 4 )
 anims/motion = SubResource( 5 )
 
 [node name="effect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 31 )
+pitch_scale = 0.6
 autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_black_hole_body_entered"]

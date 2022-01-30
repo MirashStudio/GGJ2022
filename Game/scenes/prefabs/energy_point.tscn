@@ -42,7 +42,7 @@
 [ext_resource path="res://audio/sfx/Collect Item sound effect.ogg" type="AudioStream" id=40]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 37.855
+radius = 48.0104
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -61,12 +61,13 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enerngy"]]
+position = Vector2( -4, 0 )
 shape = SubResource( 1 )
 
 [node name="Icon" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "motion2"
-frame = 7
+frame = 3
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

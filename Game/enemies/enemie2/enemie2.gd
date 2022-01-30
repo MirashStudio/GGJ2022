@@ -15,6 +15,7 @@ var in_screen = false
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	print("created")
 	GameSingleton.connect("playerDeath",self,"scale_death")
 	position_init = global_position
 	set_scaleINIT()
@@ -128,10 +129,12 @@ func _on_Timer_timeout():
 func _on_area_detection_area_entered(area):
 	
 	if area.is_in_group("bullet"):
-		print("morreu546465")
+	
 		set_physics_process(false)
 		stop_move = true
 		$Sprite/AnimationPlayer.play("enemie_death")
 		$effect_death.play()
 		yield(get_tree().create_timer(3),"timeout")
 		queue_free()
+	if area.is_in_group("player"):
+		GameSingleton.sub_life(2)

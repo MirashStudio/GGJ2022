@@ -16,9 +16,7 @@ var Time_delay_shoot = 1
 
 func _ready():
 	
-	OS.set_window_maximized(true)
 	Input.set_custom_mouse_cursor(load("res://transparent.png"))
-	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	GameSingleton.connect("levelUP",self,"level_UP")
 	GameSingleton.connect("playerDeath",self,"death_player")
 	
@@ -30,7 +28,7 @@ func _ready():
 		$AIm.visible = true
 		$Powerball.visible = true
 		liberate_hud()
-		
+		scale = Vector2(1.5,1.5)
 		
 func _physics_process(delta):
 	

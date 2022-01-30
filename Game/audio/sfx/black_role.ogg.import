@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/black_role.ogg-1b05dd4873e0b7049668616b118692dc.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/black_role.ogg"
+dest_files=[ "res://.import/black_role.ogg-1b05dd4873e0b7049668616b118692dc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

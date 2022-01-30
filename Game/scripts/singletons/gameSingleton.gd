@@ -43,6 +43,7 @@ func sub_life(value):
 		player_death = true
 		AudioSystem.reset_all()
 		emit_signal("playerDeath")
+		
 func reset_parameters():
 	
 	level_player = 0

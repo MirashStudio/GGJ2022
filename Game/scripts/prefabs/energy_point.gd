@@ -27,7 +27,6 @@ func select_values():
 			AmountXP = rng.randi_range(21,49)
 		3:
 			AmountXP = rng.randi_range(50,100)
-	#AmountXP = 100
 	return AmountXP
 
 func scale_set():
@@ -95,11 +94,12 @@ func _on_VisibilityNotifier2D_screen_exited():
 	if colect == true:
 		
 		yield(get_tree().create_timer(10),"timeout")
-		colect = false 
-		while scale.x < 0.5:
-			yield(get_tree().create_timer(0.02),"timeout")
-			scale.x += 0.1
-			scale.y += 0.1
+		if  GameSingleton.level_player < 4:
+			colect = false 
+			while scale.x < 0.5:
+				yield(get_tree().create_timer(0.02),"timeout")
+				scale.x += 0.1
+				scale.y += 0.1
 			
 			
 		scale_set()

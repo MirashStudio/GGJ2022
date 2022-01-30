@@ -11,5 +11,5 @@ dest_files=[ "res://.import/meteor_boss.ogg-cb595a51d146a5c095d87ed6d6b283b9.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
