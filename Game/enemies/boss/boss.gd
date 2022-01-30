@@ -147,4 +147,5 @@ func _on_area_headBoss_area_entered(area):
 func _on_area_damage_body_entered(body):
 	
 	if body.is_in_group("player"):
+		yield(get_tree().create_timer(1),"timeout")
 		GameSingleton.sub_life(100)

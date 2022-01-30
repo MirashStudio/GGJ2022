@@ -285,7 +285,7 @@ rotation = -1.5708
 scale = Vector2( 0.380428, 0.334128 )
 frames = SubResource( 3 )
 animation = "idle"
-frame = 15
+frame = 24
 playing = true
 offset = Vector2( -60, 0 )
 
@@ -296,7 +296,7 @@ rotation = -1.56735
 scale = Vector2( 0.283844, 0.270647 )
 frames = SubResource( 4 )
 animation = "motion"
-frame = 12
+frame = 8
 playing = true
 
 [node name="Powerball2" type="AnimatedSprite" parent="."]
@@ -305,7 +305,7 @@ position = Vector2( 1, 3.00001 )
 rotation = -1.56735
 scale = Vector2( 0.709572, 0.748264 )
 frames = SubResource( 7 )
-frame = 18
+frame = 14
 playing = true
 
 [node name="effect_death" type="AudioStreamPlayer" parent="."]
