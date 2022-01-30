@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Fireball Explosion On Black Background Screen Sound 
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

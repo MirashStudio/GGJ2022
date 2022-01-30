@@ -306,34 +306,34 @@ shape = SubResource( 7 )
 position = Vector2( 26, 182 )
 
 [node name="pos1" type="Position2D" parent="."]
-position = Vector2( -593, -737 )
+position = Vector2( -755, -722 )
 
 [node name="pos2" type="Position2D" parent="."]
-position = Vector2( -473, -737 )
+position = Vector2( -605, -731 )
 
 [node name="pos3" type="Position2D" parent="."]
-position = Vector2( -307, -739 )
+position = Vector2( -435, -731 )
 
 [node name="pos4" type="Position2D" parent="."]
-position = Vector2( -132, -748 )
+position = Vector2( -272, -735 )
 
 [node name="pos5" type="Position2D" parent="."]
-position = Vector2( -12, -754 )
+position = Vector2( -122, -741 )
 
 [node name="pos6" type="Position2D" parent="."]
-position = Vector2( 111, -754 )
+position = Vector2( 140, -746 )
 
 [node name="pos7" type="Position2D" parent="."]
-position = Vector2( 252, -750 )
+position = Vector2( 281, -742 )
 
 [node name="pos8" type="Position2D" parent="."]
-position = Vector2( 398, -757 )
+position = Vector2( 427, -749 )
 
 [node name="pos9" type="Position2D" parent="."]
-position = Vector2( 539, -750 )
+position = Vector2( 568, -742 )
 
 [node name="pos10" type="Position2D" parent="."]
-position = Vector2( 674, -754 )
+position = Vector2( 709, -749 )
 
 [node name="delay_attack" type="Timer" parent="."]
 
@@ -374,5 +374,6 @@ root_node = NodePath("../life_container")
 anims/motion = SubResource( 8 )
 
 [connection signal="animation_finished" from="animBoss" to="." method="_on_animBoss_animation_finished"]
+[connection signal="area_entered" from="area_damage" to="." method="_on_area_damage_area_entered"]
 [connection signal="area_entered" from="area_headBoss" to="." method="_on_area_headBoss_area_entered"]
 [connection signal="timeout" from="delay_attack" to="." method="_on_delay_attack_timeout"]
