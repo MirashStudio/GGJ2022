@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Comet Sound effect _ BeetaSounds.ogg-9cf9f64f847948bdf4cd0ff4926801f5.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/Comet Sound effect _ BeetaSounds.ogg"
+dest_files=[ "res://.import/Comet Sound effect _ BeetaSounds.ogg-9cf9f64f847948bdf4cd0ff4926801f5.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

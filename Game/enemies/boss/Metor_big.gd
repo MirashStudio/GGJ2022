@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 300 
+var speed = 900
 
 
 
@@ -19,5 +19,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 func _on_Metor_small_body_entered(body):
 	
 	if body.is_in_group("player"):
-		GameSingleton.sub_life(10)
+		GameSingleton.sub_life(20)
 		queue_free()

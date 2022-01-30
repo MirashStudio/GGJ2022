@@ -63,11 +63,12 @@ func restart_parameters():
 		select_color()
 
 func Hide():
-	
+	$colect.play()
 	while scale.x > 0:
 		yield(get_tree().create_timer(0.02),"timeout")
 		scale.x -= 0.1
 		scale.y -= 0.1
+		$colect.pitch_scale -= 0.1
 	scale = Vector2(0,0)
 	colect = true
 
@@ -91,12 +92,15 @@ func _on_VisibilityNotifier2D_screen_exited():
 	
 	in_screen = false
 	if colect == true:
+		
 		yield(get_tree().create_timer(10),"timeout")
 		colect = false 
 		while scale.x < 0.5:
 			yield(get_tree().create_timer(0.02),"timeout")
 			scale.x += 0.1
 			scale.y += 0.1
+			
+			
 		scale_set()
 
 func _on_VisibilityNotifier2D_screen_entered():

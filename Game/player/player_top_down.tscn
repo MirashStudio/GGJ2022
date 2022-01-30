@@ -236,7 +236,7 @@ rotation = -1.5708
 scale = Vector2( 0.380428, 0.334128 )
 frames = SubResource( 3 )
 animation = "idle"
-frame = 5
+frame = 22
 playing = true
 offset = Vector2( -60, 0 )
 
@@ -247,7 +247,7 @@ rotation = -1.56735
 scale = Vector2( 0.283844, 0.270647 )
 frames = SubResource( 4 )
 animation = "motion"
-frame = 8
+frame = 27
 playing = true
 
 [node name="effect_death" type="AudioStreamPlayer" parent="."]
@@ -259,10 +259,10 @@ layer = 100
 visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 67.0
-margin_top = 16.0
+margin_top = 20.0
 margin_right = 107.0
-margin_bottom = 56.0
-rect_scale = Vector2( 0.680001, 0.76 )
+margin_bottom = 60.0
+rect_scale = Vector2( 0.480001, 0.64 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

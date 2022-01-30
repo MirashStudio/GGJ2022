@@ -9,7 +9,7 @@ func play_track(value:String):
 		
 func reset_all():
 	
-	$faixa1.stop()
+	$faixa1.volume_db = -80
 	$faixa2.volume_db = -80
 	$faixa3.volume_db = -80
 	$faixa4.volume_db = -80
@@ -22,3 +22,12 @@ func play_all():
 	$faixa3.play()
 	$faixa4.play()
 	$faixa5.play()
+
+
+func play_levelBoss():
+	
+	$faixa1.volume_db = -15
+	$faixa2.volume_db = -15
+	$faixa3.volume_db = -15
+	$faixa4.volume_db = -15
+	$faixa5.volume_db = -15

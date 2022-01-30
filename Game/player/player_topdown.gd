@@ -13,6 +13,7 @@ var Time_delay_shoot = 1
 
 
 
+
 func _ready():
 	
 	OS.set_window_maximized(true)
@@ -22,9 +23,9 @@ func _ready():
 	GameSingleton.connect("playerDeath",self,"death_player")
 	
 	if $"..".name == "levelBoss":
-		
+		GameSingleton.level_player = 4
 		can_shoot = true
-		Time_delay_shoot = 0.1
+		Time_delay_shoot = 0.2
 		speed = 500
 		$AIm.visible = true
 		$Powerball.visible = true
@@ -206,5 +207,6 @@ func create_bullet():
 	if GameSingleton.player_death == false:
 		var bullet = preload("res://player/bullet/bullet.tscn")
 		var bl = bullet.instance()
-		$pos_bullet.get_parent().add_child(bl)
+		get_parent().add_child(bl)
 		bl.update_transform($pos_bullet.transform)
+		bl.global_position = $pos_bullet.global_position
