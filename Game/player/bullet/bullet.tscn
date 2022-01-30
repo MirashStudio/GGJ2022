@@ -12,8 +12,8 @@
 [ext_resource path="res://player/shot/shot_13.png" type="Texture" id=10]
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 6.23223
-height = 47.6245
+radius = 16.3189
+height = 69.2412
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -22,18 +22,19 @@ animations = [ {
 "name": "start",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "move",
-"speed": 10.0
-}, {
 "frames": [  ],
 "loop": false,
 "name": "destroy",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "move",
+"speed": 10.0
 } ]
 
 [node name="bullet_cannon_ghost" type="Area2D" groups=["bullet"]]
+scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["bullet"]]
@@ -41,9 +42,9 @@ rotation = 1.56111
 shape = SubResource( 3 )
 
 [node name="anim" type="AnimatedSprite" parent="."]
-position = Vector2( 0.825892, 3.94339e-06 )
+position = Vector2( -0.066031, 1.48651 )
 rotation = 1.5708
-scale = Vector2( 0.711354, 1.15418 )
+scale = Vector2( 0.9622, 1.99963 )
 frames = SubResource( 2 )
 animation = "move"
 
