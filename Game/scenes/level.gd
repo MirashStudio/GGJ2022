@@ -101,5 +101,9 @@ func _on_botton_body_entered(body):
 		body.global_position.y = -5000
 
 
-
-	
+func change_scene_to_boss():
+	if GameSingleton.level_player >= 4:
+		GameSingleton.player_in_boss = true
+		$anim_scene.play("motion")
+		yield(get_tree().create_timer(1.2),"timeout")
+		get_tree().change_scene("res://scenes/levelBoss.tscn")

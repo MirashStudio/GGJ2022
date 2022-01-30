@@ -11,6 +11,7 @@ var player_in_boss = false
 signal levelUP
 signal playerDeath
 
+
 func add_XP(value):
 	
 	playerXP += value
@@ -36,7 +37,7 @@ func check_level():
 func sub_life(value):
 	
 	life_player -= value
-	print(life_player)
+	
 	if life_player <= 0:
 		life_player = 0
 		player_death = true

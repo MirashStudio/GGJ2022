@@ -14,7 +14,7 @@ func _on_bt_restart_pressed():
 	if GameSingleton.player_in_boss == false:
 		get_tree().change_scene("res://scenes/level.tscn")
 	else:
-		pass
+		get_tree().change_scene("res://scenes/levelBoss.tscn")
 	
 func _on_bt_exit_pressed():
 	

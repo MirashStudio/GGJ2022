@@ -39,6 +39,7 @@ func _physics_process(delta):
 	move_aimJoystick(delta)
 	hand_look_aim()
 	update_life()
+	
 	if can_move_mouse == false:
 		get_viewport().warp_mouse($AIm.position)
 	move = move_and_slide(move)

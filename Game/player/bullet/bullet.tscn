@@ -21,15 +21,15 @@ animations = [ {
 "name": "start",
 "speed": 8.0
 }, {
-"frames": [  ],
-"loop": false,
-"name": "destroy",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "move",
 "speed": 10.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "destroy",
+"speed": 8.0
 } ]
 
 [node name="bullet_cannon_ghost" type="Area2D" groups=["bullet"]]
