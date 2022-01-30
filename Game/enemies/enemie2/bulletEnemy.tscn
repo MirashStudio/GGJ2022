@@ -57,7 +57,7 @@ position = Vector2( -33.5625, -2 )
 scale = Vector2( 0.983724, 0.884259 )
 frames = SubResource( 2 )
 animation = "move"
-frame = 17
+frame = 9
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

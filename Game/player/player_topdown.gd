@@ -4,7 +4,7 @@ var move = Vector2()
 var pos_aim = Vector2()
 var dist_X = 0
 var dist_Y = 0
-var speed = 300
+var speed = 310
 var speed_aim = 10
 var can_shoot = false
 var delay_shoot = false
@@ -40,14 +40,14 @@ func level_UP():
 		2: 
 			set_scalePlayer()
 			liberate_AIM()
-			speed = 400
+			speed = 420
 			Time_delay_shoot = 0.6
 			AudioSystem.play_track("faixa3")
 			
 		3:
 			set_scalePlayer()
 			Time_delay_shoot = 0.3
-			speed = 600
+			speed = 700
 			AudioSystem.play_track("faixa4")
 
 func liberate_AIM():
