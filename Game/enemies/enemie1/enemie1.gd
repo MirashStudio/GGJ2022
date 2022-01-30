@@ -114,4 +114,5 @@ func _on_area_detection_area_entered(area):
 		print("morreu")
 		stop_move = true
 		$Sprite/AnimationPlayer.play("enemie_death")
+		yield(get_tree().create_timer(1),"timeout")
 		queue_free()

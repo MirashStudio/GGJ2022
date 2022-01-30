@@ -26,7 +26,7 @@ func select_values():
 			AmountXP = rng.randi_range(21,49)
 		3:
 			AmountXP = rng.randi_range(50,100)
-	AmountXP = 100
+	#AmountXP = 100
 	return AmountXP
 
 func scale_set():

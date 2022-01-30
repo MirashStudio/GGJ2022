@@ -9,7 +9,7 @@ var speed_aim = 10
 var can_shoot = false
 var delay_shoot = false
 var can_move_mouse = true
-
+var Time_delay_shoot = 1
 
 func _ready():
 	
@@ -27,7 +27,6 @@ func _physics_process(delta):
 	hand_look_aim()
 	if can_move_mouse == false:
 		get_viewport().warp_mouse($AIm.position)
-		
 	move = move_and_slide(move)
 	GameSingleton.player_target = global_position
 	
@@ -37,17 +36,19 @@ func level_UP():
 	match GameSingleton.level_player:
 		1:
 			set_scalePlayer()
-			print("LEVEL 1")
+			AudioSystem.play_track("faixa2")
 		2: 
 			set_scalePlayer()
 			liberate_AIM()
 			speed = 400
-			print("LEVEL 2")
+			Time_delay_shoot = 0.6
+			AudioSystem.play_track("faixa3")
 			
 		3:
 			set_scalePlayer()
+			Time_delay_shoot = 0.3
 			speed = 600
-			print("LEVEL 3")
+			AudioSystem.play_track("faixa4")
 
 func liberate_AIM():
 	
@@ -134,14 +135,14 @@ func call_shoot():
 			if delay_shoot == false:
 				delay_shoot = true
 				create_bullet()
-				yield(get_tree().create_timer(1),"timeout")
+				yield(get_tree().create_timer(Time_delay_shoot),"timeout")
 				delay_shoot = false
 				
 		if Input.is_action_just_pressed("ui_shotTrigger"):
 			if delay_shoot == false:
 				delay_shoot = true
 				create_bullet()
-				yield(get_tree().create_timer(1),"timeout")
+				yield(get_tree().create_timer(Time_delay_shoot),"timeout")
 				delay_shoot = false
 				
 func create_bullet():

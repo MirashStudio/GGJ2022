@@ -38,23 +38,22 @@ func drag_player(delta):
 		var motion = direction * 100 * delta
 		get_node(node_refer).global_position += motion
 		
-func create_ball():
-	
-	pass
-	
+		
 func death_check():
 	
 	if death == true:
 		death = false
 		
+
 func chase(delta):
 	
 	if stop_move == false :
 		var direction = (target - position).normalized()
 		var motion = direction * speed * delta
 		position += motion
-	
+
 func create_bullet():
+	
 	var delay = rng.randf_range(2,4)
 	var bullet = preload("res://enemies/enemie2/bulletEnemy.tscn")
 	var bl = bullet.instance()
@@ -62,7 +61,7 @@ func create_bullet():
 	bl.update_transform($pos.transform)
 	yield(get_tree().create_timer(delay),"timeout")
 	create_bullet()
-	
+
 func set_scaleINIT():
 	
 	rng.randomize()
@@ -79,13 +78,12 @@ func set_scaleINIT():
 			scl = rng.randf_range(1.8,2.5)
 	scale = Vector2(scl,scl)
 	
-	
-
 func _on_VisibilityNotifier2D_screen_entered():
 	#set_physics_process(true)
 	
 	in_screen = true
 	$Timer.start()
+	create_bullet()
 	
 func _on_VisibilityNotifier2D_screen_exited():
 	in_screen = false

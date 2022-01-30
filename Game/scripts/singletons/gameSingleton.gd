@@ -5,7 +5,8 @@ var level_current = level_player
 var playerXP = 0
 var player_target = Vector2()
 var can_create_enemy = false
-
+var life_player = 100
+var player_death = false
 signal levelUP
 
 
@@ -17,12 +18,36 @@ func add_XP(value):
 	if playerXP >= 600 and playerXP <= 800:
 		level_player = 2
 		can_create_enemy = true
-	if playerXP >= 2000:
+	if playerXP >= 2000 and playerXP <= 2500:
 		level_player = 3
+	if playerXP > 3000:
+		level_player = 4
 	check_level()
 	print(playerXP," ",level_player)
 
+
 func check_level():
+	
 	if level_player != level_current:
 		level_current = level_player
 		emit_signal("levelUP")
+
+func sub_life(value):
+	
+	life_player -= value
+	
+	if life_player <= 0:
+		life_player = 0
+		player_death = true
+		AudioSystem.reset_all()
+	
+func reset_parameters():
+	
+	level_player = 0
+	level_current = level_player
+	playerXP = 0
+	player_target = Vector2()
+	can_create_enemy = false
+	life_player = 100
+	player_death = false
+	
